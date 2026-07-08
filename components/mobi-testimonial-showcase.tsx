@@ -24,7 +24,7 @@ const fallbackCard = {
 
 function TestimonialVisual({ accent, label, active = false }: { accent: HeroCollageAccent; label: string; active?: boolean }) {
   return (
-    <div className={cn("overflow-hidden rounded-lg border border-line", active ? "h-[620px]" : "h-28", activeTheme.tenantScroller.accents[accent])}>
+    <div className={cn("overflow-hidden rounded-lg border border-line", active ? "h-[420px] sm:h-[620px]" : "h-28", activeTheme.tenantScroller.accents[accent])}>
       <div className="flex h-full flex-col justify-between p-6">
         <p className="text-xs font-black uppercase tracking-[0.2em] text-ink/60">{label}</p>
         <div className="grid gap-3">
@@ -54,7 +54,7 @@ export function MobiTestimonialShowcase({ eyebrow, title, description, quote, au
             </h2>
             <p className="mt-7 max-w-xl text-base leading-8 text-muted">{description}</p>
 
-            <blockquote className="mt-32 max-w-2xl text-2xl font-black leading-tight tracking-[-0.05em] text-ink sm:text-3xl">
+            <blockquote className="mt-14 max-w-2xl text-2xl font-black leading-tight tracking-[-0.05em] text-ink sm:mt-28 sm:text-3xl">
               “{quote}”
             </blockquote>
             <div className="mt-10 flex flex-wrap items-center gap-3">
