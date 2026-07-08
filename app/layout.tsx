@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import { MobiFloatingContact } from "@/components/mobi-floating-contact";
 import "./globals.css";
 
@@ -35,10 +36,16 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
     <html lang="pt-BR">
       <body className="min-h-screen bg-page font-sans antialiased">
+        <a
+          href="#conteudo-principal"
+          className="focus-ring sr-only fixed left-4 top-4 z-[100] rounded-sm bg-ink px-4 py-3 text-sm font-black uppercase tracking-tight text-white focus:not-sr-only"
+        >
+          Pular para conteúdo
+        </a>
         {children}
         <MobiFloatingContact />
       </body>
