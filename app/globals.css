@@ -4,8 +4,6 @@
 
 :root {
   color-scheme: light;
-  --background: #f8fafc;
-  --foreground: #0f172a;
 }
 
 * {
@@ -18,8 +16,7 @@ html {
 
 body {
   margin: 0;
-  background: var(--background);
-  color: var(--foreground);
+  @apply bg-page text-ink;
 }
 
 a {
@@ -28,8 +25,7 @@ a {
 }
 
 ::selection {
-  background: #bfdbfe;
-  color: #0f172a;
+  @apply bg-brand-100 text-ink;
 }
 
 .container-page {
