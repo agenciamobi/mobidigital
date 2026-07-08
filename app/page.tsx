@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { MobiButton } from "@/components/button";
 import { MobiHeader } from "@/components/mobi-header";
-import { MobiHeroCollage } from "@/components/mobi-hero-collage";
+import { MobiTenantSiteScroller } from "@/components/mobi-tenant-site-scroller";
 import { Footer } from "@/components/ui";
 import { mobiHomeContent } from "@/lib/home-content";
 import { audiences, features, plans, processSteps } from "@/lib/site-data";
@@ -21,7 +21,7 @@ function HomeSectionHeading({ eyebrow, title, description }: { eyebrow: string; 
 }
 
 export default function HomePage() {
-  const { hero, collage, pillars } = mobiHomeContent;
+  const { hero, tenantSites, pillars } = mobiHomeContent;
 
   return (
     <>
@@ -41,7 +41,7 @@ export default function HomePage() {
               </MobiButton>
             </div>
           </div>
-          <MobiHeroCollage items={collage} />
+          <MobiTenantSiteScroller sites={tenantSites} />
         </section>
 
         <section className="border-b border-line bg-surface py-14">
