@@ -91,6 +91,26 @@ export const mobiDesignTokens = {
       900: "#762F1C",
     },
   },
+  radius: {
+    none: "0px",
+    xs: "0.25rem",
+    sm: "0.5rem",
+    md: "0.75rem",
+    lg: "1rem",
+    xl: "1.25rem",
+    "2xl": "1.5rem",
+    xxl: "1.75rem",
+    full: "9999px",
+  },
+  button: {
+    radius: "9999px",
+    padding: {
+      sm: "0.625rem 1rem",
+      md: "0.75rem 1.25rem",
+      lg: "0.875rem 1.5rem",
+    },
+    fontWeight: "800",
+  },
 } as const;
 
 export const mobiTailwindColors = {
@@ -113,6 +133,8 @@ export const mobiTailwindColors = {
   white: mobiDesignTokens.source.white,
   black: mobiDesignTokens.source.black,
 } as const;
+
+export const mobiBorderRadius = mobiDesignTokens.radius;
 
 export const mobiBoxShadow = {
   soft: `0 24px 80px ${mobiDesignTokens.semantic.ink}1A`,
