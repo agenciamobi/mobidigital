@@ -1,6 +1,8 @@
 import Link from "next/link";
-import { ArrowUpRight, Sparkles } from "lucide-react";
+import type { ReactNode } from "react";
+import { ArrowUpRight, MessageCircle, Sparkles } from "lucide-react";
 import { MobiBrandLogo } from "@/components/mobi-brand-logo";
+import { whatsAppLink } from "@/lib/site-data";
 
 type MobiFooterProps = {
   contact: {
@@ -21,7 +23,7 @@ type MobiFooterProps = {
   }[];
 };
 
-function FooterLink({ href, children, large = false }: { href: string; children: React.ReactNode; large?: boolean }) {
+function FooterLink({ href, children, large = false }: { href: string; children: ReactNode; large?: boolean }) {
   const isExternal = href.startsWith("http");
   const className = large
     ? "group inline-flex items-center justify-between gap-3 border-b border-white/35 pb-2 text-3xl font-black tracking-[-0.06em] text-white/75 transition hover:border-orange-400 hover:text-white sm:text-4xl"
@@ -61,13 +63,16 @@ export function MobiFooter({ contact, social, columns }: MobiFooterProps) {
             <div className="mt-12 grid gap-8">
               <div>
                 <p className="text-xs font-black uppercase tracking-[0.18em] text-white/45">E-mail</p>
-                <a href={`mailto:${contact.email}`} className="mt-2 block max-w-sm break-words text-2xl font-black tracking-[-0.04em] text-white hover:text-orange-300">
+                <a href={`mailto:${contact.email}`} className="mt-2 block max-w-sm break-words text-2xl font-black tracking-[-0.04em] text-white transition hover:text-orange-300">
                   {contact.email}
                 </a>
               </div>
               <div>
                 <p className="text-xs font-black uppercase tracking-[0.18em] text-white/45">WhatsApp</p>
-                <p className="mt-2 text-2xl font-black tracking-[-0.04em] text-white">{contact.phone}</p>
+                <a href={whatsAppLink} target="_blank" rel="noreferrer" className="mt-2 inline-flex items-center gap-3 text-2xl font-black tracking-[-0.04em] text-white transition hover:text-orange-300">
+                  <MessageCircle className="h-6 w-6" aria-hidden="true" />
+                  {contact.phone}
+                </a>
               </div>
             </div>
           </div>
@@ -112,9 +117,9 @@ export function MobiFooter({ contact, social, columns }: MobiFooterProps) {
                 <Link href="/cadastro" className="focus-ring inline-flex items-center gap-2 rounded-sm bg-white px-5 py-3 text-sm font-black uppercase tracking-tight text-black transition hover:bg-orange-300">
                   Começar meu site <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
                 </Link>
-                <Link href="/planos" className="focus-ring inline-flex items-center gap-2 rounded-sm border border-white/30 px-5 py-3 text-sm font-black uppercase tracking-tight text-white transition hover:border-white hover:bg-white hover:text-black">
-                  Ver planos
-                </Link>
+                <a href={whatsAppLink} target="_blank" rel="noreferrer" className="focus-ring inline-flex items-center gap-2 rounded-sm border border-white/30 px-5 py-3 text-sm font-black uppercase tracking-tight text-white transition hover:border-white hover:bg-white hover:text-black">
+                  Falar no WhatsApp <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+                </a>
               </div>
             </div>
           </div>
