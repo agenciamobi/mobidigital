@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Menu } from "lucide-react";
+import { X } from "lucide-react";
 import { MobiButton } from "@/components/button";
 import { MobiMenuOverlay } from "@/components/mobi-menu-overlay";
 import { activeTheme } from "@/lib/themes";
@@ -11,17 +11,27 @@ import { useState } from "react";
 function MobiLogo() {
   return (
     <Link href="/" className={activeTheme.header.logo} aria-label="MOBI Digital">
-      <span className="flex items-end text-3xl font-black leading-none tracking-[-0.08em] text-ink">
-        <span className="text-cyan-500">M</span>
-        <span className="text-brand-500">O</span>
-        <span className="text-magenta-500">B</span>
-        <span className="text-orange-500">I</span>
+      <span className="grid h-10 w-10 place-items-center rounded-sm bg-ink text-sm font-black text-white shadow-sm" aria-hidden="true">
+        <span className="leading-none">
+          <span className="text-cyan-400">M</span><span className="text-brand-300">O</span>
+        </span>
       </span>
-      <span className="hidden leading-tight sm:block">
-        <span className="block text-base font-black tracking-[-0.04em] text-ink">Digital</span>
-        <span className="block text-xs font-bold uppercase tracking-[0.18em] text-muted">Sites com IA</span>
+      <span className="leading-tight">
+        <span className="block text-2xl font-black tracking-[-0.08em] text-ink">MOBI</span>
+        <span className="hidden text-[0.65rem] font-black uppercase tracking-[0.22em] text-muted sm:block">Digital</span>
       </span>
     </Link>
+  );
+}
+
+function DotMenuIcon() {
+  return (
+    <span className="grid grid-cols-2 gap-1" aria-hidden="true">
+      <span className="h-1.5 w-1.5 rounded-full bg-ink" />
+      <span className="h-1.5 w-1.5 rounded-full bg-ink" />
+      <span className="h-1.5 w-1.5 rounded-full bg-ink" />
+      <span className="h-1.5 w-1.5 rounded-full bg-ink" />
+    </span>
   );
 }
 
@@ -43,7 +53,7 @@ export function MobiHeader() {
 
         <div className="flex items-center gap-3">
           <MobiButton href="/cadastro" size="sm" variant="primary" className="hidden sm:inline-flex">
-            Começar agora
+            Começar meu site
           </MobiButton>
           <button
             type="button"
@@ -52,7 +62,7 @@ export function MobiHeader() {
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((current) => !current)}
           >
-            <Menu className="h-5 w-5" aria-hidden="true" />
+            {menuOpen ? <X className="h-5 w-5" aria-hidden="true" /> : <DotMenuIcon />}
           </button>
         </div>
       </div>
