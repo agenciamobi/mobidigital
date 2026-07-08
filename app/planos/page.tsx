@@ -1,10 +1,27 @@
+import { ArrowRight, CheckCircle2, MessageCircle } from "lucide-react";
+import { MobiButton } from "@/components/button";
 import { CTASection, PageHero, PageShell, PlanCard, SectionHeading } from "@/components/ui";
-import { plans } from "@/lib/site-data";
+import { plans, whatsAppLink } from "@/lib/site-data";
 
 export const metadata = {
   title: "Planos",
   description: "Planos iniciais da MOBI Digital para criação de sites com IA, hospedagem, WordPress e suporte da MOBI.",
 };
+
+const planGuides = [
+  {
+    title: "Start",
+    description: "Para validar presença digital, WhatsApp e primeiras páginas sem complexidade.",
+  },
+  {
+    title: "Pro",
+    description: "Para empresa que precisa de estrutura institucional, SEO local e conteúdo inicial.",
+  },
+  {
+    title: "Catálogo",
+    description: "Para negócios com produtos, serviços, categorias e atendimento rápido pelo WhatsApp.",
+  },
+];
 
 export default function PlanosPage() {
   return (
@@ -23,11 +40,17 @@ export default function PlanosPage() {
               </div>
             ))}
           </div>
-          <div className="mt-14 rounded-lg border border-orange-200 bg-orange-50 p-6 text-sm leading-7 text-orange-900 shadow-sm">
-            <strong>Observação:</strong> os valores podem variar conforme configuração, domínio, volume de conteúdo e necessidades específicas. A primeira versão pode operar com ativação manual pela equipe MOBI.
+          <div className="mt-14 grid gap-5 rounded-lg border border-line bg-surface p-6 shadow-sm lg:grid-cols-[1fr_auto] lg:items-center">
+            <p className="text-sm leading-7 text-muted">
+              <strong className="text-ink">Observação:</strong> os valores podem variar conforme configuração, domínio, volume de conteúdo e necessidades específicas. A primeira versão pode operar com ativação manual pela equipe MOBI.
+            </p>
+            <MobiButton href={whatsAppLink} external variant="primary" size="md">
+              Tirar dúvida <MessageCircle className="h-4 w-4" aria-hidden="true" />
+            </MobiButton>
           </div>
         </div>
       </section>
+
       <section className="bg-surface-muted py-16 sm:py-24">
         <div className="container-page">
           <SectionHeading
@@ -35,6 +58,40 @@ export default function PlanosPage() {
             title="Planos de entrada, estrutura de produto e expansão futura"
             description="Depois da validação inicial, os planos poderão se conectar a assinatura, painel do cliente, templates, limites, parceiros e provisionamento automatizado."
           />
+          <div className="mt-12 grid gap-5 md:grid-cols-3">
+            {planGuides.map((guide, index) => (
+              <article key={guide.title} className="group rounded-lg border border-line bg-surface p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-editorial">
+                <div className="flex items-center justify-between gap-4">
+                  <CheckCircle2 className="h-7 w-7 text-brand-700" aria-hidden="true" />
+                  <span className="text-3xl font-black text-line">0{index + 1}</span>
+                </div>
+                <h3 className="mt-6 text-2xl font-black tracking-[-0.06em] text-ink">{guide.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-muted">{guide.description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-page py-16 sm:py-24">
+        <div className="container-page rounded-lg border border-ink bg-ink p-8 text-white shadow-editorial">
+          <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+            <div>
+              <p className="text-xs font-black uppercase tracking-[0.22em] text-orange-300">Escolha assistida</p>
+              <h2 className="mt-4 text-4xl font-black leading-[0.95] tracking-[-0.07em] sm:text-5xl">Na dúvida, comece pela conversa comercial.</h2>
+              <p className="mt-5 max-w-2xl text-base leading-7 text-white/70">
+                A MOBI ajuda a escolher o plano conforme segmento, volume de páginas, domínio, necessidade de catálogo e urgência de publicação.
+              </p>
+            </div>
+            <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">
+              <MobiButton href={whatsAppLink} external variant="secondary" size="lg">
+                Falar no WhatsApp <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </MobiButton>
+              <MobiButton href="/cadastro" variant="ghost" size="lg" className="border border-white/20 text-white hover:bg-white hover:text-black">
+                Pré-cadastro
+              </MobiButton>
+            </div>
+          </div>
         </div>
       </section>
       <CTASection />
