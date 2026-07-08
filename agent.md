@@ -170,7 +170,34 @@ Regras:
 2. CTA principal deve usar a mesma variante em todas as páginas públicas.
 3. Não usar verde WhatsApp como padrão sem token. Se necessário, criar token específico antes.
 4. Não criar `className` extenso de botão dentro da página quando já existir componente reutilizável.
-5. Preferir um componente único de botão, por exemplo `components/button.tsx`, antes da próxima limpeza visual.
+5. Usar `components/button.tsx` para novas ações clicáveis com aparência de botão.
+
+## Regra de arquitetura de temas
+
+A arquitetura de temas está documentada em:
+
+```txt
+docs/theme-architecture.md
+```
+
+Separação obrigatória:
+
+```txt
+Conteúdo/dados: lib/home-content.ts e lib/site-data.ts
+Tokens globais: lib/design-tokens.ts
+Contrato de tema: lib/themes/types.ts
+Tema ativo: lib/themes/index.ts
+Tema atual: lib/themes/mobi-editorial-agency.ts
+Componentes de tema: components/mobi-*.tsx
+```
+
+Regras:
+
+1. Não gravar conteúdo fixo dentro de componentes de tema quando esse conteúdo puder viver em arquivo de dados.
+2. Um novo tema deve alterar apresentação, não apagar ou recriar cards, planos, textos e informações comerciais.
+3. Componentes de tema devem consumir `activeTheme` e receber conteúdo por props.
+4. Para criar outro tema, criar novo arquivo em `lib/themes/`, registrar em `lib/themes/index.ts` e trocar `activeTheme`.
+5. Trocar tema não deve exigir mudanças em `lib/home-content.ts` nem em `lib/site-data.ts`.
 
 ## Regra de direção visual
 
