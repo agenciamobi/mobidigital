@@ -23,10 +23,10 @@ type MobiDarkImpactProps = {
   }[];
 };
 
-function DarkShowcaseCard({ title, description, accent }: { title: string; description: string; accent: HeroCollageAccent }) {
+function DarkShowcaseCard({ title, description, accent, index }: { title: string; description: string; accent: HeroCollageAccent; index: number }) {
   return (
-    <article className="rounded-lg border-[12px] border-white bg-white p-3 shadow-polaroid">
-      <div className={cn("h-56 rounded-md p-5 sm:h-72", activeTheme.tenantScroller.accents[accent])}>
+    <article className={cn("rounded-lg border-[12px] border-white bg-white p-3 shadow-polaroid", index % 2 === 1 ? "rotate-[-3deg]" : "rotate-[2deg]") }>
+      <div className={cn("h-56 rounded-md p-5 sm:h-80", activeTheme.tenantScroller.accents[accent])}>
         <div className="flex h-full items-end rounded-md border border-white/70 bg-white/30 p-5 backdrop-blur-sm">
           <Sparkles className="h-10 w-10 text-ink" aria-hidden="true" />
         </div>
@@ -56,8 +56,8 @@ export function MobiDarkImpact({
   return (
     <section className="bg-page px-3 py-10 sm:px-6" aria-labelledby="mobi-dark-impact-title">
       <div className="overflow-hidden rounded-xl bg-black px-6 py-20 text-white sm:px-10 sm:py-28 lg:px-20">
-        <div className="container-page grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-          <div>
+        <div className="container-page grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+          <div className="lg:sticky lg:top-28">
             <p className="text-xs font-black uppercase tracking-[0.22em] text-orange-300">{eyebrow}</p>
             <h2 id="mobi-dark-impact-title" className="mt-5 max-w-2xl text-balance text-4xl font-black leading-[0.92] tracking-[-0.07em] sm:text-6xl">
               {title}
@@ -94,27 +94,30 @@ export function MobiDarkImpact({
             </div>
           </div>
 
-          <div className="rounded-lg border border-white/10 bg-white/5 p-3">
-            <div className={cn("h-[420px] rounded-md p-6 sm:h-[560px]", activeTheme.tenantScroller.accents.magenta)}>
-              <div className="flex h-full flex-col justify-between rounded-md border border-white/70 bg-white/30 p-6 backdrop-blur-sm">
-                <div className="flex items-center justify-between">
-                  <p className="text-xs font-black uppercase tracking-[0.2em] text-ink/60">MOBI Digital</p>
-                  <ArrowUpRight className="h-5 w-5 text-ink" aria-hidden="true" />
+          <div className="relative">
+            <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-orange-500/20 blur-2xl" aria-hidden="true" />
+            <div className="rounded-lg border border-white/10 bg-white/5 p-3">
+              <div className={cn("h-[420px] rounded-md p-6 sm:h-[620px]", activeTheme.tenantScroller.accents.magenta)}>
+                <div className="flex h-full flex-col justify-between rounded-md border border-white/70 bg-white/30 p-6 backdrop-blur-sm">
+                  <div className="flex items-center justify-between">
+                    <p className="text-xs font-black uppercase tracking-[0.2em] text-ink/60">MOBI Digital</p>
+                    <ArrowUpRight className="h-5 w-5 text-ink" aria-hidden="true" />
+                  </div>
+                  <p className="max-w-sm text-5xl font-black leading-[0.86] tracking-[-0.08em] text-ink">Site com estrutura, IA e suporte.</p>
                 </div>
-                <p className="max-w-sm text-5xl font-black leading-[0.86] tracking-[-0.08em] text-ink">Site com estrutura, IA e suporte.</p>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="mx-auto mt-28 max-w-4xl text-center">
+        <div className="mx-auto mt-32 max-w-4xl text-center">
           <h3 className="text-balance text-4xl font-black leading-[0.95] tracking-[-0.07em] sm:text-6xl">{showcaseTitle}</h3>
         </div>
 
-        <div className="mx-auto mt-14 grid max-w-5xl gap-16">
+        <div className="mx-auto mt-16 grid max-w-5xl gap-20">
           {cards.map((card, index) => (
             <div key={card.title} className={cn(index % 2 === 1 ? "lg:ml-auto lg:w-4/5" : "lg:w-4/5") }>
-              <DarkShowcaseCard {...card} />
+              <DarkShowcaseCard {...card} index={index} />
             </div>
           ))}
         </div>
