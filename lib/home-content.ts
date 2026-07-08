@@ -177,6 +177,10 @@ export const mobiHomeContent = {
       "Da venda inicial ao painel do cliente, a MOBI Digital nasce preparada para crescer com domínio próprio, white label e provisionamento técnico.",
     cta: "Ver próximos passos",
     href: "/como-funciona",
+    metric: "60+",
+    metricLabel: "possibilidades de nicho",
+    people: ["M", "IA", "P"],
+    exploreLabel: "Explorar tudo",
     cards: [
       {
         title: "Experiência multi-segmento",
@@ -190,20 +194,76 @@ export const mobiHomeContent = {
         title: "Operação white label",
         description: "Parceiros poderão usar marca, cores, suporte e domínio próprio no painel, sem recriar a infraestrutura.",
       },
+      {
+        title: "Resultados que importam",
+        description: "Cada site nasce com chamada comercial, contato, SEO local e uma base clara para medir evolução.",
+      },
     ],
   },
-  pillars: [
-    {
-      title: "Produto guiado",
-      description: "O cliente não precisa entender cPanel, hospedagem ou instalação para começar com uma base clara.",
+  testimonial: {
+    eyebrow: "Depoimento demonstrativo",
+    title: "Histórias de clientes que saem do improviso digital",
+    description:
+      "Nesta fase, usamos um case conceitual para representar o tipo de experiência que a plataforma deve entregar aos tenants.",
+    quote:
+      "A MOBI organizou o caminho: briefing, site, domínio, WhatsApp e estrutura para SEO. O processo ficou claro e o site saiu do papel com muito menos atrito.",
+    author: "Cliente MOBI Digital",
+    role: "Case conceitual",
+    rating: "★★★★★",
+    cards: [
+      { label: "Antes", accent: "magenta" as HeroCollageAccent },
+      { label: "Durante", accent: "cyan" as HeroCollageAccent },
+      { label: "Depois", accent: "orange" as HeroCollageAccent },
+    ],
+  },
+  people: {
+    eyebrow: "Tecnologia com direção humana",
+    title: "IA acelera. Pessoas dão direção.",
+    description:
+      "A plataforma deve ser técnica por trás e simples na frente. O papel da MOBI é transformar opções soltas em uma jornada clara para o cliente.",
+    backgroundText: "Pessoas + IA + estratégia",
+    members: [
+      { name: "MOBI", role: "produto e estratégia", accent: "brand" as HeroCollageAccent },
+      { name: "Cliente", role: "briefing e decisão", accent: "cyan" as HeroCollageAccent },
+      { name: "IA", role: "velocidade e apoio", accent: "magenta" as HeroCollageAccent },
+      { name: "Partner", role: "white label futuro", accent: "orange" as HeroCollageAccent },
+    ],
+  },
+  footer: {
+    contact: {
+      email: "contato@agenciamobi.com.br",
+      phone: "(53) 3302-7947",
+      location: "Pelotas/RS",
     },
-    {
-      title: "IA com direção",
-      description: "A plataforma não joga uma tela vazia para o cliente: ela transforma briefing em prompt e estrutura.",
-    },
-    {
-      title: "Infraestrutura evolutiva",
-      description: "A arquitetura já considera WHM/cPanel, Softaculous, domínio próprio, painel e white label.",
-    },
-  ],
+    social: [
+      { label: "WhatsApp", href: "/contato" },
+      { label: "Instagram", href: "https://www.instagram.com/agenciamobi" },
+      { label: "Agência MOBI", href: "https://agenciamobi.com.br" },
+    ],
+    columns: [
+      {
+        title: "Produto",
+        links: [
+          { label: "Planos", href: "/planos" },
+          { label: "Como funciona", href: "/como-funciona" },
+          { label: "Domínio próprio", href: "/dominio-proprio" },
+        ],
+      },
+      {
+        title: "Plataforma",
+        links: [
+          { label: "Cadastro", href: "/cadastro" },
+          { label: "Entrar", href: "/entrar" },
+          { label: "FAQ", href: "/faq" },
+        ],
+      },
+      {
+        title: "Parceiros",
+        links: [
+          { label: "White Label", href: "/white-label" },
+          { label: "Contato", href: "/contato" },
+        ],
+      },
+    ],
+  },
 } as const;
