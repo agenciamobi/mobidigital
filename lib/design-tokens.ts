@@ -162,9 +162,14 @@ export const mobiKeyframes = {
     "0%": { opacity: "0", transform: "translate3d(0, 28px, 0)" },
     "100%": { opacity: "1", transform: "translate3d(0, 0, 0)" },
   },
+  "mobi-marquee-left": {
+    "0%": { transform: "translate3d(0, 0, 0)" },
+    "100%": { transform: "translate3d(-50%, 0, 0)" },
+  },
 } as const;
 
 export const mobiAnimation = {
   "float-slow": "mobi-float 7s cubic-bezier(0.16, 1, 0.3, 1) infinite",
   "enter-up": "mobi-enter-up 640ms cubic-bezier(0.16, 1, 0.3, 1) both",
+  "marquee-left": "mobi-marquee-left 38s linear infinite",
 } as const;
