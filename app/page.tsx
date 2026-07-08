@@ -1,8 +1,11 @@
 import { ArrowRight } from "lucide-react";
 import { MobiAboutBand } from "@/components/mobi-about-band";
 import { MobiButton } from "@/components/button";
+import { MobiDarkImpact } from "@/components/mobi-dark-impact";
 import { MobiFeaturedSites } from "@/components/mobi-featured-sites";
 import { MobiHeader } from "@/components/mobi-header";
+import { MobiServiceRows } from "@/components/mobi-service-rows";
+import { MobiSuccessGrid } from "@/components/mobi-success-grid";
 import { MobiTenantSiteScroller } from "@/components/mobi-tenant-site-scroller";
 import { Footer } from "@/components/ui";
 import { mobiHomeContent } from "@/lib/home-content";
@@ -23,7 +26,7 @@ function HomeSectionHeading({ eyebrow, title, description }: { eyebrow: string; 
 }
 
 export default function HomePage() {
-  const { hero, tenantSites, about, featuredSites, pillars } = mobiHomeContent;
+  const { hero, tenantSites, about, featuredSites, serviceRows, darkImpact, successGrid, pillars } = mobiHomeContent;
 
   return (
     <>
@@ -49,6 +52,12 @@ export default function HomePage() {
         <MobiAboutBand {...about} />
 
         <MobiFeaturedSites {...featuredSites} />
+
+        <MobiServiceRows {...serviceRows} />
+
+        <MobiDarkImpact {...darkImpact} />
+
+        <MobiSuccessGrid {...successGrid} />
 
         <section className="border-b border-t border-line bg-surface py-14">
           <div className="container-page grid gap-4 md:grid-cols-3">
