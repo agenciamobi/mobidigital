@@ -47,7 +47,7 @@ export default function HomePage() {
   return (
     <>
       <MobiHeader />
-      <main className={activeTheme.layout.page}>
+      <main id="conteudo-principal" className={activeTheme.layout.page} tabIndex={-1}>
         <section className={activeTheme.hero.shell}>
           <div className="container-page relative z-10 text-center motion-safe:animate-enter-up">
             <p className={activeTheme.hero.eyebrow}>{hero.eyebrow}</p>
