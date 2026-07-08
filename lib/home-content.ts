@@ -57,6 +57,52 @@ export const mobiHomeContent = {
       metrics: ["Portfólio", "Briefing", "IA"],
     },
   ],
+  about: {
+    eyebrow: "Sobre a plataforma",
+    title:
+      "A MOBI Digital transforma criação de sites em um fluxo guiado, com IA, infraestrutura e suporte humano trabalhando juntos.",
+    description:
+      "Em vez de entregar uma tela vazia, a plataforma organiza briefing, plano, domínio, estrutura inicial, WordPress e orientação para Code With AI. O cliente entende o caminho; a MOBI mantém controle técnico e comercial.",
+    badges: ["Sites com IA", "WordPress", "Domínio próprio"],
+    stats: [
+      { value: "4", label: "etapas principais" },
+      { value: "24h", label: "para triagem inicial" },
+      { value: "100%", label: "fluxo orientado" },
+    ],
+    collaborators: ["P", "M", "IA"],
+  },
+  featuredSites: {
+    eyebrow: "Projetos em destaque",
+    title: "Sites criados para vender, informar e captar contatos",
+    description:
+      "Cada tenant pode partir de um briefing diferente, mas a base comercial permanece organizada: páginas claras, CTA, SEO local e evolução com IA.",
+    cta: "Ver planos",
+    href: "/planos",
+    items: [
+      {
+        name: "Floricultura Aurora",
+        type: "Catálogo com WhatsApp",
+        summary: "Produtos organizados por categoria, pedidos rápidos e estrutura para campanhas sazonais.",
+        accent: "cyan" as HeroCollageAccent,
+        tags: ["Catálogo", "WhatsApp", "SEO local"],
+        large: true,
+      },
+      {
+        name: "Clínica Silva",
+        type: "Site institucional",
+        summary: "Apresentação de serviços, contato, localização e conteúdo preparado para busca local.",
+        accent: "brand" as HeroCollageAccent,
+        tags: ["Institucional", "Serviços"],
+      },
+      {
+        name: "Bistrô Central",
+        type: "Landing + cardápio",
+        summary: "Experiência mobile-first com chamada para reserva, WhatsApp e cardápio organizado.",
+        accent: "orange" as HeroCollageAccent,
+        tags: ["Mobile", "Reservas"],
+      },
+    ],
+  },
   pillars: [
     {
       title: "Produto guiado",
