@@ -88,8 +88,108 @@ A identidade visual da MOBI Digital deve partir da marca MOBI:
 - Laranja como acento pontual para energia, alerta ou chamada secundária.
 - Neutros derivados de preto/branco para legibilidade, fundos, bordas e hierarquia.
 
+## Regra crítica de bordas, raios e cantos
+
+Bordas e arredondamentos também devem ser tokenizados.
+
+O objetivo é permitir uma troca futura de direção visual, por exemplo de interface arredondada para interface reta, alterando apenas os tokens de raio em `lib/design-tokens.ts`.
+
+Tokens permitidos:
+
+```txt
+rounded-none
+rounded-xs
+rounded-sm
+rounded-md
+rounded-lg
+rounded-xl
+rounded-2xl
+rounded-xxl
+rounded-full
+border-line
+```
+
+Evitar criar valores arbitrários diretamente no componente:
+
+```tsx
+className="rounded-[2rem]"
+className="rounded-[18px]"
+className="border-[#e2e8f0]"
+```
+
+Se for necessário criar um novo tipo de canto, adicionar primeiro em:
+
+```txt
+lib/design-tokens.ts -> mobiDesignTokens.radius
+```
+
+Depois expor no Tailwind via:
+
+```txt
+tailwind.config.ts -> borderRadius: mobiBorderRadius
+```
+
+## Regra crítica de botões
+
+Botões devem ser padronizados por intenção, tamanho e estado.
+
+Não criar botões soltos com combinações aleatórias de classes em cada página.
+
+Toda implementação nova deve seguir variantes previsíveis:
+
+```txt
+primary   -> ação principal, fundo roxo/brand, texto branco
+secondary -> ação secundária, fundo surface, borda line, texto ink
+outline   -> ação discreta, fundo transparente/surface, borda line
+ghost     -> navegação ou ação leve, sem borda forte
+danger    -> ação destrutiva futura, deve ser tokenizada antes de uso
+whatsapp  -> CTA de contato, deve respeitar tokens de marca e não usar verde solto sem decisão de design
+```
+
+Tamanhos recomendados:
+
+```txt
+sm -> ações compactas
+md -> padrão do produto
+lg -> CTA principal de landing page
+```
+
+Estados obrigatórios:
+
+```txt
+hover
+focus-visible
+active
+disabled
+loading, quando aplicável
+```
+
+Regras:
+
+1. Botão primário deve ser consistente em todo o projeto.
+2. CTA principal deve usar a mesma variante em todas as páginas públicas.
+3. Não usar verde WhatsApp como padrão sem token. Se necessário, criar token específico antes.
+4. Não criar `className` extenso de botão dentro da página quando já existir componente reutilizável.
+5. Preferir um componente único de botão, por exemplo `components/button.tsx`, antes da próxima limpeza visual.
+
+## Regra de direção visual
+
+Antes da limpeza dos componentes, definir uma referência visual principal para guiar:
+
+- densidade dos cards;
+- nível de arredondamento;
+- sombras;
+- contraste;
+- botões;
+- hero;
+- uso de gradientes;
+- estilo de ilustrações/mockups;
+- comportamento mobile.
+
+Depois que a referência visual for aprovada, a limpeza deve aplicar o padrão no projeto inteiro, não apenas em uma página isolada.
+
 ## Motivo
 
-A troca futura de identidade visual deve exigir alteração centralizada, sem varrer páginas e componentes procurando cores hardcoded.
+A troca futura de identidade visual deve exigir alteração centralizada, sem varrer páginas e componentes procurando cores, bordas, botões e estilos hardcoded.
 
-Antes de criar novos componentes, revisar se a cor escolhida já existe como token. Se não existir, criar ou ajustar o token primeiro.
+Antes de criar novos componentes, revisar se cor, raio, sombra, borda e botão já existem como token ou componente reutilizável. Se não existir, criar ou ajustar o token primeiro.
