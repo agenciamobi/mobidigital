@@ -20,8 +20,11 @@ export function MobiBrandLogo({
       <img
         src="/brand/mobi-logo.svg"
         alt="MOBI"
+        width={537}
+        height={189}
         className={cn("h-10 w-auto object-contain", markClassName)}
         loading="eager"
+        decoding="async"
       />
       {showDescriptor ? (
         <span className="leading-none">
