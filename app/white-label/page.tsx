@@ -16,25 +16,26 @@ export default function WhiteLabelPage() {
         title="Venda sites com sua marca usando a estrutura da MOBI"
         description="A camada Partner da MOBI Digital será pensada para agências e parceiros que querem vender sites, manter relacionamento com seus clientes e usar a infraestrutura MOBI por trás."
       />
-      <section className="bg-slate-50 py-16 sm:py-20">
+      <section className="bg-page py-16 sm:py-24">
         <div className="container-page">
           <SectionHeading
             eyebrow="Parceiros"
             title="Do cliente direto ao modelo de agência"
             description="O white label será implementado no nível da aplicação e do painel, sem prometer remoção completa de marcas técnicas de cPanel ou Softaculous quando essas ferramentas forem abertas diretamente."
           />
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
+          <div className="mt-12 grid gap-5 md:grid-cols-3">
             {whiteLabelLevels.map((item) => (
               <FeatureCard key={item.title} {...item} />
             ))}
           </div>
         </div>
       </section>
-      <section className="bg-white py-16 sm:py-20">
+      <section className="bg-surface-muted py-16 sm:py-24">
         <div className="container-page grid gap-8 lg:grid-cols-[1fr_1fr]">
-          <article className="rounded-xxl border border-slate-200 bg-slate-50 p-8">
-            <h2 className="text-2xl font-black text-ink">O parceiro poderá configurar</h2>
-            <ul className="mt-6 grid gap-3 text-sm leading-6 text-slate-700">
+          <article className="rounded-lg border border-line bg-surface p-8 shadow-sm">
+            <p className="text-xs font-black uppercase tracking-[0.22em] text-brand-700">Configuração do parceiro</p>
+            <h2 className="mt-4 text-3xl font-black tracking-[-0.06em] text-ink">O parceiro poderá configurar</h2>
+            <ul className="mt-6 grid gap-3 text-sm leading-6 text-muted">
               {[
                 "Nome da marca",
                 "Logo e cores",
@@ -44,16 +45,17 @@ export default function WhiteLabelPage() {
                 "Planos comerciais próprios",
                 "Opção de exibir ou ocultar Powered by MOBI",
               ].map((item) => (
-                <li key={item} className="rounded-2xl bg-white p-4 font-semibold shadow-sm">{item}</li>
+                <li key={item} className="rounded-md border border-line bg-page p-4 font-semibold shadow-sm">{item}</li>
               ))}
             </ul>
           </article>
-          <article className="rounded-xxl border border-slate-200 bg-ink p-8 text-white shadow-soft">
-            <h2 className="text-2xl font-black">Modelo comercial de longo prazo</h2>
+          <article className="rounded-lg border border-ink bg-ink p-8 text-white shadow-editorial">
+            <p className="text-xs font-black uppercase tracking-[0.22em] text-orange-300">Longo prazo</p>
+            <h2 className="mt-4 text-3xl font-black tracking-[-0.06em]">Modelo comercial de longo prazo</h2>
             <p className="mt-4 text-base leading-7 text-slate-300">
               O objetivo é permitir que a MOBI venda diretamente e, ao mesmo tempo, crie uma camada Partner para agências que querem entregar sites sem montar toda a operação técnica do zero.
             </p>
-            <Link href="/contato" className="focus-ring mt-8 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-black text-ink transition hover:bg-brand-50">
+            <Link href="/contato" className="focus-ring mt-8 inline-flex items-center gap-2 rounded-sm bg-white px-6 py-3 text-sm font-black uppercase tracking-tight text-ink transition hover:bg-brand-50">
               Quero ser parceiro MOBI Digital <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </article>
