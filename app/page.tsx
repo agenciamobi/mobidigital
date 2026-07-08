@@ -5,6 +5,7 @@ import { MobiDarkImpact } from "@/components/mobi-dark-impact";
 import { MobiFeaturedSites } from "@/components/mobi-featured-sites";
 import { MobiFooter } from "@/components/mobi-footer";
 import { MobiHeader } from "@/components/mobi-header";
+import { MobiInsightsGrid } from "@/components/mobi-insights-grid";
 import { MobiPeopleSection } from "@/components/mobi-people-section";
 import { MobiServiceRows } from "@/components/mobi-service-rows";
 import { MobiSuccessGrid } from "@/components/mobi-success-grid";
@@ -36,6 +37,7 @@ export default function HomePage() {
     serviceRows,
     darkImpact,
     successGrid,
+    insights,
     testimonial,
     people,
     footer,
@@ -67,6 +69,7 @@ export default function HomePage() {
         <MobiServiceRows {...serviceRows} />
         <MobiDarkImpact {...darkImpact} />
         <MobiSuccessGrid {...successGrid} />
+        <MobiInsightsGrid {...insights} />
         <MobiTestimonialShowcase {...testimonial} />
         <MobiPeopleSection {...people} />
 
