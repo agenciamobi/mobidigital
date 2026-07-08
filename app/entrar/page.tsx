@@ -1,5 +1,6 @@
-import Link from "next/link";
-import { PageShell } from "@/components/ui";
+import { ArrowRight, LockKeyhole } from "lucide-react";
+import { MobiButton } from "@/components/button";
+import { PageHero, PageShell } from "@/components/ui";
 import { whatsAppLink } from "@/lib/site-data";
 
 export const metadata = {
@@ -10,23 +11,43 @@ export const metadata = {
 export default function EntrarPage() {
   return (
     <PageShell>
-      <section className="bg-slate-50 py-20 sm:py-28">
-        <div className="container-page max-w-3xl text-center">
-          <p className="inline-flex rounded-full border border-brand-200 bg-brand-50 px-4 py-2 text-xs font-black uppercase tracking-[0.22em] text-brand-700">
-            Acesso
-          </p>
-          <h1 className="mt-6 text-4xl font-black tracking-tight text-ink sm:text-5xl">Login em preparação</h1>
-          <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-slate-600">
-            O painel do cliente será ativado na próxima etapa. Por enquanto, a frente comercial pública já está preparada para deploy.
-          </p>
-          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-            <a href={whatsAppLink} target="_blank" rel="noreferrer" className="focus-ring rounded-full bg-ink px-6 py-3 text-sm font-black text-white transition hover:bg-brand-700">
-              Falar no WhatsApp
-            </a>
-            <Link href="/" className="focus-ring rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-black text-ink transition hover:bg-slate-100">
-              Voltar para a home
-            </Link>
-          </div>
+      <PageHero
+        eyebrow="Acesso"
+        title="O painel do cliente está em preparação"
+        description="A área de login será o centro para acompanhar briefing, domínio, status do site, suporte e futuras integrações de IA."
+      />
+
+      <section className="bg-page py-16 sm:py-24">
+        <div className="container-page grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-stretch">
+          <article className="rounded-lg border border-line bg-surface p-8 shadow-editorial">
+            <div className="flex h-14 w-14 items-center justify-center rounded-md bg-brand-50 text-brand-700">
+              <LockKeyhole className="h-7 w-7" aria-hidden="true" />
+            </div>
+            <h2 className="mt-8 text-4xl font-black leading-[0.95] tracking-[-0.07em] text-ink">Login ainda não liberado publicamente</h2>
+            <p className="mt-5 text-base leading-8 text-muted">
+              Por enquanto, a frente comercial pública está pronta para validação. A entrada no painel será ativada junto com a camada de backend e autenticação.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <MobiButton href="/" variant="primary" size="md">
+                Voltar para a home <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </MobiButton>
+              <MobiButton href={whatsAppLink} external variant="secondary" size="md">
+                Falar com a MOBI
+              </MobiButton>
+            </div>
+          </article>
+
+          <article className="rounded-lg border border-line bg-surface-muted p-8">
+            <p className="text-xs font-black uppercase tracking-[0.22em] text-brand-700">Futuro painel</p>
+            <div className="mt-8 grid gap-4">
+              {["Status do site", "Briefing", "Domínio", "Suporte", "Prompt de IA"].map((item, index) => (
+                <div key={item} className="flex items-center justify-between border-b border-line pb-4">
+                  <span className="text-lg font-black tracking-[-0.05em] text-ink">{item}</span>
+                  <span className="text-2xl font-black text-line">0{index + 1}</span>
+                </div>
+              ))}
+            </div>
+          </article>
         </div>
       </section>
     </PageShell>
