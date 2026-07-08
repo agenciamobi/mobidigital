@@ -48,7 +48,7 @@ function FooterLink({ href, children, large = false }: { href: string; children:
 
 export function MobiFooter({ contact, social, columns }: MobiFooterProps) {
   return (
-    <footer className="overflow-hidden bg-black py-20 text-white sm:py-28" aria-label="Rodapé MOBI Digital">
+    <footer className="overflow-hidden bg-black pt-20 pb-36 text-white sm:pt-28 sm:pb-40" aria-label="Rodapé MOBI Digital">
       <div className="container-page">
         <div className="grid gap-14 lg:grid-cols-[0.95fr_0.85fr_1.2fr] lg:items-start">
           <div>
