@@ -1,5 +1,6 @@
 import { Plus } from "lucide-react";
 import { MobiButton } from "@/components/button";
+import { cn } from "@/lib/utils";
 
 type MobiSuccessGridProps = {
   eyebrow: string;
@@ -19,7 +20,7 @@ type MobiSuccessGridProps = {
 
 export function MobiSuccessGrid({ eyebrow, title, description, cta, href, metric, metricLabel, people, exploreLabel, cards }: MobiSuccessGridProps) {
   return (
-    <section className="bg-page py-20 sm:py-28" aria-labelledby="mobi-success-title">
+    <section className="bg-page py-20 sm:py-32" aria-labelledby="mobi-success-title">
       <div className="container-page grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
         <div className="lg:sticky lg:top-28">
           <p className="text-xs font-black uppercase tracking-[0.22em] text-ink">{eyebrow}</p>
@@ -33,7 +34,7 @@ export function MobiSuccessGrid({ eyebrow, title, description, cta, href, metric
             </MobiButton>
           </div>
 
-          <div className="mt-28 hidden lg:block">
+          <div className="mt-16 lg:mt-28">
             <div className="mb-5 flex items-center">
               {people.map((person, index) => (
                 <span
@@ -51,7 +52,13 @@ export function MobiSuccessGrid({ eyebrow, title, description, cta, href, metric
 
         <div className="grid gap-5 sm:grid-cols-2">
           {cards.map((card, index) => (
-            <article key={card.title} className="flex min-h-[320px] flex-col justify-between border border-line bg-surface p-8 shadow-sm odd:lg:translate-y-16">
+            <article
+              key={card.title}
+              className={cn(
+                "flex min-h-[340px] flex-col justify-between border border-line bg-surface p-8 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-editorial",
+                index % 2 === 0 ? "lg:translate-y-16" : "",
+              )}
+            >
               <div>
                 <p className="text-xs font-black uppercase tracking-[0.18em] text-muted">0{index + 1}</p>
                 <h3 className="mt-10 text-2xl font-black tracking-[-0.06em] text-ink">{card.title}</h3>
@@ -63,7 +70,7 @@ export function MobiSuccessGrid({ eyebrow, title, description, cta, href, metric
               </a>
             </article>
           ))}
-          <a href={href} className="grid min-h-[320px] place-items-center rounded-full border border-line bg-page p-8 text-center transition hover:bg-surface sm:col-start-2">
+          <a href={href} className="grid min-h-[260px] place-items-center rounded-full border border-line bg-page p-8 text-center transition hover:-translate-y-1 hover:bg-surface hover:shadow-editorial sm:col-start-2 sm:min-h-[340px]">
             <div>
               <Plus className="mx-auto h-10 w-10 text-ink" aria-hidden="true" />
               <p className="mt-3 text-sm font-black uppercase tracking-[0.14em] text-ink">{exploreLabel}</p>
