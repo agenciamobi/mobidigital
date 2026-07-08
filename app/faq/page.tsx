@@ -14,15 +14,16 @@ export default function FAQPage() {
         title="Perguntas frequentes sobre a MOBI Digital"
         description="Respostas objetivas para explicar o produto, reduzir objeções comerciais e preparar o cliente para o próximo passo."
       />
-      <section className="bg-slate-50 py-16 sm:py-20">
+      <section className="bg-page py-16 sm:py-24">
         <div className="container-page max-w-4xl">
           <div className="grid gap-4">
-            {faqs.map((faq) => (
-              <details key={faq.question} className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                <summary className="cursor-pointer list-none text-base font-black text-ink outline-none group-open:text-brand-700">
+            {faqs.map((faq, index) => (
+              <details key={faq.question} className="group rounded-lg border border-line bg-surface p-6 shadow-sm transition hover:shadow-editorial">
+                <summary className="cursor-pointer list-none text-base font-black tracking-[-0.04em] text-ink outline-none group-open:text-brand-700 sm:text-lg">
+                  <span className="mr-4 text-muted">{String(index + 1).padStart(2, "0")}</span>
                   {faq.question}
                 </summary>
-                <p className="mt-4 text-sm leading-7 text-slate-600">{faq.answer}</p>
+                <p className="mt-5 border-t border-line pt-5 text-sm leading-7 text-muted">{faq.answer}</p>
               </details>
             ))}
           </div>
