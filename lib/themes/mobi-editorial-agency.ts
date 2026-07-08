@@ -22,7 +22,7 @@ export const mobiEditorialAgencyTheme: ThemeRecord = {
   },
   menu: {
     panel:
-      "absolute right-4 top-[88px] z-50 w-[min(440px,calc(100vw-32px))] rounded-xl border border-line bg-surface p-6 shadow-editorial sm:right-8 lg:right-[max(2rem,calc((100vw-1120px)/2))]",
+      "fixed right-4 top-[88px] z-50 w-[min(440px,calc(100vw-32px))] rounded-xl border border-line bg-surface p-6 shadow-editorial sm:right-8 lg:right-[max(2rem,calc((100vw-1120px)/2))]",
     link: "flex items-center justify-between rounded-md px-1 py-2 text-2xl font-black tracking-tight text-ink transition hover:text-brand-600 sm:text-3xl",
     mutedText: "text-sm leading-6 text-muted",
   },
