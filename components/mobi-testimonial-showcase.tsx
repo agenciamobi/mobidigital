@@ -17,6 +17,11 @@ type MobiTestimonialShowcaseProps = {
   }[];
 };
 
+const fallbackCard = {
+  label: "Case",
+  accent: "brand" as HeroCollageAccent,
+};
+
 function TestimonialVisual({ accent, label, active = false }: { accent: HeroCollageAccent; label: string; active?: boolean }) {
   return (
     <div className={cn("overflow-hidden rounded-lg border border-line", active ? "h-[620px]" : "h-28", activeTheme.tenantScroller.accents[accent])}>
@@ -32,7 +37,7 @@ function TestimonialVisual({ accent, label, active = false }: { accent: HeroColl
 }
 
 export function MobiTestimonialShowcase({ eyebrow, title, description, quote, author, role, rating, cards }: MobiTestimonialShowcaseProps) {
-  const activeCard = cards[2] ?? cards[0];
+  const activeCard = cards[2] ?? cards[0] ?? fallbackCard;
 
   return (
     <section className="bg-page py-20 sm:py-28" aria-labelledby="mobi-testimonial-title">
