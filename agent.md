@@ -174,7 +174,21 @@ Regras:
 
 ## Regra de direção visual
 
-Antes da limpeza dos componentes, definir uma referência visual principal para guiar:
+A referência visual aprovada para guiar a próxima limpeza está documentada em:
+
+```txt
+docs/visual-reference-idotive.md
+```
+
+A referência deve orientar linguagem visual, estrutura e movimento, não cópia literal de código, assets, textos ou marca.
+
+Direção adotada:
+
+```txt
+agency editorial + SaaS técnico + marca MOBI
+```
+
+Antes da limpeza dos componentes, usar essa referência para guiar:
 
 - densidade dos cards;
 - nível de arredondamento;
@@ -184,9 +198,27 @@ Antes da limpeza dos componentes, definir uma referência visual principal para 
 - hero;
 - uso de gradientes;
 - estilo de ilustrações/mockups;
-- comportamento mobile.
+- comportamento mobile;
+- menu overlay;
+- motion/parallax suave.
 
 Depois que a referência visual for aprovada, a limpeza deve aplicar o padrão no projeto inteiro, não apenas em uma página isolada.
+
+## Regra de originalidade
+
+Não copiar código, assets, imagens, textos, marca ou template de terceiros de forma literal.
+
+É permitido capturar:
+
+- estrutura de composição;
+- ritmo visual;
+- hierarquia;
+- comportamento de menu;
+- ideia de cards inclinados;
+- motion patterns;
+- sensação editorial/agência.
+
+É obrigatório reimplementar tudo como tema original MOBI Digital.
 
 ## Motivo
 
