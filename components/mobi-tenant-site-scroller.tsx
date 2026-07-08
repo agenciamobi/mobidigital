@@ -15,11 +15,19 @@ type MobiTenantSiteScrollerProps = {
   sites: readonly TenantSite[];
 };
 
-function TenantSiteCard({ site }: { site: TenantSite }) {
+const cardMotion = [
+  "rotate-[-10deg] translate-y-10",
+  "rotate-[-4deg] translate-y-1",
+  "rotate-[2deg] -translate-y-6",
+  "rotate-[7deg] translate-y-4",
+  "rotate-[13deg] translate-y-12",
+];
+
+function TenantSiteCard({ site, index }: { site: TenantSite; index: number }) {
   const theme = activeTheme.tenantScroller;
 
   return (
-    <article className={theme.card} aria-label={`Site tenant ${site.name}`}>
+    <article className={cn(theme.card, cardMotion[index % cardMotion.length])} aria-label={`Site tenant ${site.name}`}>
       <div className={theme.browser}>
         <div className={theme.browserBar}>
           <span className={theme.browserDot} aria-hidden="true" />
@@ -56,7 +64,7 @@ export function MobiTenantSiteScroller({ sites }: MobiTenantSiteScrollerProps) {
       <div className={theme.viewport}>
         <div className={theme.track}>
           {repeatedSites.map((site, index) => (
-            <TenantSiteCard key={`${site.name}-${index}`} site={site} />
+            <TenantSiteCard key={`${site.name}-${index}`} site={site} index={index} />
           ))}
         </div>
       </div>
