@@ -31,14 +31,19 @@ export function MobiButton({
   );
 
   if (href) {
+    const isExternal = external || href.startsWith("http") || href.startsWith("mailto:") || href.startsWith("tel:");
+    const linkClassName = cn(buttonClassName, disabled && "pointer-events-none opacity-50");
+
+    if (isExternal) {
+      return (
+        <a href={href} className={linkClassName} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noreferrer" : undefined} aria-disabled={disabled || undefined}>
+          {children}
+        </a>
+      );
+    }
+
     return (
-      <Link
-        href={href}
-        className={cn(buttonClassName, disabled && "pointer-events-none opacity-50")}
-        target={external ? "_blank" : undefined}
-        rel={external ? "noreferrer" : undefined}
-        aria-disabled={disabled || undefined}
-      >
+      <Link href={href} className={linkClassName} aria-disabled={disabled || undefined}>
         {children}
       </Link>
     );
