@@ -200,6 +200,40 @@ export const mobiHomeContent = {
       },
     ],
   },
+  insights: {
+    eyebrow: "Guias rápidos",
+    title: "Decisões melhores antes de publicar o site",
+    description:
+      "Conteúdos curtos ajudam o cliente a entender domínio, briefing, IA, WordPress e SEO sem transformar a venda em uma conversa técnica demais.",
+    cta: "Ver FAQ",
+    href: "/faq",
+    items: [
+      {
+        title: "Como escolher um domínio sem travar o projeto",
+        description: "O domínio pode ser conectado depois. O importante é iniciar com estrutura clara e evitar que DNS bloqueie o começo.",
+        meta: "Domínio próprio",
+        accent: "brand" as HeroCollageAccent,
+      },
+      {
+        title: "Por que briefing guiado melhora o resultado da IA",
+        description: "A IA entrega melhor quando recebe informações objetivas sobre público, serviços, diferenciais e tom comercial.",
+        meta: "Briefing + IA",
+        accent: "cyan" as HeroCollageAccent,
+      },
+      {
+        title: "WordPress ainda faz sentido para sites comerciais",
+        description: "A base continua útil para páginas, blog, SEO local, conteúdo e evolução com suporte técnico quando necessário.",
+        meta: "WordPress",
+        accent: "magenta" as HeroCollageAccent,
+      },
+      {
+        title: "White label exige marca, operação e suporte bem definidos",
+        description: "Parceiros precisam de identidade própria, mas também de regras claras para suporte, domínio, clientes e planos.",
+        meta: "Parceiros",
+        accent: "orange" as HeroCollageAccent,
+      },
+    ],
+  },
   testimonial: {
     eyebrow: "Depoimento demonstrativo",
     title: "Histórias de clientes que saem do improviso digital",
