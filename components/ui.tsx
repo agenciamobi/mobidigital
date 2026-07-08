@@ -73,13 +73,13 @@ export function PlanCard({ plan }: { plan: { name: string; description: string; 
         {plan.badge}
       </span>
       <h3 className="mt-7 text-4xl font-black leading-none tracking-[-0.07em]">{plan.name}</h3>
-      <p className={cn("mt-5 text-sm leading-7", plan.highlighted ? "text-slate-200" : "text-muted")}>{plan.description}</p>
+      <p className={cn("mt-5 text-sm leading-7", plan.highlighted ? "text-white/75" : "text-muted")}>{plan.description}</p>
       <p className="mt-8 text-3xl font-black tracking-[-0.05em]">{plan.price}</p>
       <ul className="mt-8 grid gap-3 text-sm">
         {plan.features.map((feature) => (
-          <li key={feature} className="flex gap-3 border-t border-line/70 pt-3">
+          <li key={feature} className={cn("flex gap-3 border-t pt-3", plan.highlighted ? "border-white/15" : "border-line/70")}>
             <CheckCircle2 className={cn("mt-0.5 h-5 w-5 flex-none", plan.highlighted ? "text-brand-200" : "text-brand-600")} aria-hidden="true" />
-            <span className={plan.highlighted ? "text-slate-100" : "text-muted"}>{feature}</span>
+            <span className={plan.highlighted ? "text-white/85" : "text-muted"}>{feature}</span>
           </li>
         ))}
       </ul>
@@ -118,8 +118,11 @@ export function CTASection() {
 
 export function PageHero({ eyebrow, title, description }: { eyebrow: string; title: string; description: string }) {
   return (
-    <section className="border-b border-line bg-page py-16 sm:py-24">
-      <div className="container-page mx-auto max-w-5xl text-center">
+    <section className="relative overflow-hidden border-b border-line bg-page py-16 sm:py-24">
+      <p className="pointer-events-none absolute inset-x-0 top-8 hidden text-center text-[clamp(6rem,16vw,15rem)] font-black leading-none tracking-[-0.12em] text-ink/[0.035] sm:block" aria-hidden="true">
+        MOBI
+      </p>
+      <div className="container-page relative z-10 mx-auto max-w-5xl text-center">
         <Eyebrow>{eyebrow}</Eyebrow>
         <h1 className="mt-7 text-balance text-[clamp(3.4rem,8vw,7rem)] font-black leading-[0.88] tracking-[-0.08em] text-ink">{title}</h1>
         <p className="mx-auto mt-7 max-w-3xl text-base leading-8 text-muted sm:text-lg">{description}</p>
