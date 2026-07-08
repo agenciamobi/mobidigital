@@ -71,21 +71,22 @@ export default function HomePage() {
         <MobiPeopleSection {...people} />
 
         <section className="bg-page py-20 sm:py-28">
-          <div className="container-page">
+          <div className="container-page border-t border-line pt-16">
             <HomeSectionHeading
               eyebrow="Planos"
               title="Comece simples, evolua com estrutura"
               description="Planos iniciais para validar o produto comercialmente antes da automação completa de WHM/cPanel e Softaculous."
             />
-            <div className="mt-12 grid gap-6 lg:grid-cols-3">
-              {plans.map((plan) => (
+            <div className="mt-14 grid gap-6 lg:grid-cols-3">
+              {plans.map((plan, index) => (
                 <article
                   key={plan.name}
                   className={cn(
-                    "flex h-full flex-col border p-6 shadow-sm",
+                    "flex h-full min-h-[520px] flex-col border p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-editorial",
                     plan.highlighted
-                      ? "rounded-lg border-ink bg-ink text-white shadow-editorial"
+                      ? "rounded-lg border-ink bg-ink text-white shadow-editorial lg:-translate-y-8"
                       : "rounded-lg border-line bg-surface text-ink",
+                    index === 2 ? "lg:translate-y-8" : "",
                   )}
                 >
                   <span
@@ -96,15 +97,15 @@ export default function HomePage() {
                   >
                     {plan.badge}
                   </span>
-                  <h3 className="mt-5 text-3xl font-black leading-none tracking-[-0.06em]">{plan.name}</h3>
-                  <p className={cn("mt-4 text-sm leading-6", plan.highlighted ? "text-slate-200" : "text-muted")}>{plan.description}</p>
-                  <p className="mt-6 text-2xl font-black tracking-[-0.04em]">{plan.price}</p>
-                  <ul className="mt-6 grid gap-3 text-sm">
+                  <h3 className="mt-7 text-4xl font-black leading-none tracking-[-0.07em]">{plan.name}</h3>
+                  <p className={cn("mt-5 text-sm leading-7", plan.highlighted ? "text-slate-200" : "text-muted")}>{plan.description}</p>
+                  <p className="mt-8 text-3xl font-black tracking-[-0.05em]">{plan.price}</p>
+                  <ul className="mt-8 grid gap-3 text-sm">
                     {plan.features.map((feature) => (
                       <li key={feature} className={cn("border-t pt-3", plan.highlighted ? "border-white/15 text-slate-100" : "border-line text-muted")}>{feature}</li>
                     ))}
                   </ul>
-                  <MobiButton href={plan.href} variant={plan.highlighted ? "secondary" : "primary"} size="md" className="mt-8 w-full">
+                  <MobiButton href={plan.href} variant={plan.highlighted ? "secondary" : "primary"} size="md" className="mt-auto w-full">
                     {plan.cta}
                   </MobiButton>
                 </article>
