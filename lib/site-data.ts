@@ -22,9 +22,24 @@ import {
 export const navItems = [
   { href: "/como-funciona", label: "Como funciona" },
   { href: "/planos", label: "Planos" },
+  { href: "/dominio-proprio", label: "Domínio próprio" },
   { href: "/white-label", label: "White Label" },
   { href: "/faq", label: "FAQ" },
   { href: "/contato", label: "Contato" },
+];
+
+export const publicRoutes = [
+  "/",
+  "/planos",
+  "/como-funciona",
+  "/dominio-proprio",
+  "/white-label",
+  "/faq",
+  "/contato",
+  "/cadastro",
+  "/entrar",
+  "/app",
+  "/admin",
 ];
 
 export const whatsAppLink =
@@ -229,4 +244,32 @@ export const trustItems = [
   { title: "Fluxo guiado", icon: CheckCircle2 },
   { title: "Controle técnico", icon: ShieldCheck },
   { title: "WhatsApp integrado", icon: MessageCircle },
+];
+
+export const domainSteps = [
+  {
+    title: "Comece com subdomínio temporário",
+    description: "O cliente pode iniciar em algo como cliente.mobidigital.com.br enquanto prepara o domínio definitivo.",
+  },
+  {
+    title: "Informe o domínio próprio",
+    description: "O painel vai coletar domínio principal, versão com www e responsável pela configuração DNS.",
+  },
+  {
+    title: "Configure os apontamentos",
+    description: "A plataforma exibe instruções claras para A record, CNAME e validação de propagação.",
+  },
+  {
+    title: "Ative SSL e publicação",
+    description: "Após validação, o domínio entra como ativo e o site passa a responder no endereço do cliente.",
+  },
+];
+
+export const partnerBenefits = [
+  "Painel com marca, cores e logo do parceiro",
+  "Clientes separados por organização",
+  "Planos comerciais próprios",
+  "Suporte com WhatsApp do parceiro",
+  "Domínio customizado para acesso ao painel",
+  "Possibilidade de ocultar a marca MOBI conforme plano",
 ];
