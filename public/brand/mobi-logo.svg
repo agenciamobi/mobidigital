@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="537" height="189" viewBox="0 0 537 189" role="img" aria-labelledby="mobi-logo-title">
+  <title id="mobi-logo-title">MOBI</title>
+  <defs>
+    <filter id="mobiShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="3" stdDeviation="0" flood-color="#000000" flood-opacity="0.95"/>
+    </filter>
+    <style>
+      .mobi-letter{font-family:'Arial Rounded MT Bold','Arial Black',system-ui,sans-serif;font-weight:900;paint-order:stroke fill;stroke:#000;stroke-width:2px;filter:url(#mobiShadow)}
+    </style>
+  </defs>
+  <text x="-12" y="155" font-size="168" class="mobi-letter" fill="#18BDCD">M</text>
+  <g filter="url(#mobiShadow)">
+    <circle cx="260" cy="91" r="77" fill="#5E2CED" stroke="#000" stroke-width="3"/>
+    <circle cx="260" cy="91" r="62" fill="none" stroke="#FFFFFF" stroke-width="5" opacity="0.98"/>
+    <circle cx="260" cy="91" r="34" fill="#FFFFFF" stroke="#000" stroke-width="3"/>
+    <circle cx="260" cy="91" r="80" fill="none" stroke="#5E2CED" stroke-width="5" opacity="0.9"/>
+  </g>
+  <text x="333" y="155" font-size="168" class="mobi-letter" fill="#E70B85">B</text>
+  <text x="481" y="155" font-size="168" class="mobi-letter" fill="#F27035">I</text>
+</svg>
