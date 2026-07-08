@@ -23,7 +23,7 @@ type MobiFooterProps = {
 function FooterLink({ href, children, large = false }: { href: string; children: React.ReactNode; large?: boolean }) {
   const isExternal = href.startsWith("http");
   const className = large
-    ? "group inline-flex items-center gap-3 border-b border-white/40 pb-2 text-3xl font-black tracking-[-0.06em] text-white/80 transition hover:text-white"
+    ? "group inline-flex items-center justify-between gap-3 border-b border-white/40 pb-2 text-3xl font-black tracking-[-0.06em] text-white/80 transition hover:border-orange-400 hover:text-white"
     : "text-sm font-semibold text-white/70 transition hover:text-white";
 
   if (isExternal) {
@@ -50,16 +50,16 @@ export function MobiFooter({ contact, social, columns }: MobiFooterProps) {
         <div className="grid gap-12 lg:grid-cols-[1fr_0.8fr_1.2fr]">
           <div>
             <Link href="/" className="focus-ring inline-flex items-center gap-3 rounded-sm" aria-label="MOBI Digital">
-              <span className="text-4xl font-black tracking-[-0.08em]">
-                <span className="text-cyan-500">M</span><span className="text-brand-500">O</span><span className="text-magenta-500">B</span><span className="text-orange-500">I</span>
+              <span className="grid h-12 w-12 place-items-center rounded-sm bg-white text-sm font-black tracking-[-0.08em]">
+                <span><span className="text-cyan-500">M</span><span className="text-brand-500">O</span></span>
               </span>
-              <span className="text-2xl font-black tracking-[-0.06em] text-white">Digital</span>
+              <span className="text-2xl font-black tracking-[-0.06em] text-white">MOBI Digital</span>
             </Link>
 
             <div className="mt-12 grid gap-8">
               <div>
                 <p className="text-xs font-black uppercase tracking-[0.18em] text-white/50">E-mail</p>
-                <a href={`mailto:${contact.email}`} className="mt-2 block text-2xl font-black tracking-[-0.04em] text-white hover:text-orange-300">
+                <a href={`mailto:${contact.email}`} className="mt-2 block max-w-sm text-2xl font-black tracking-[-0.04em] text-white hover:text-orange-300">
                   {contact.email}
                 </a>
               </div>
@@ -95,12 +95,14 @@ export function MobiFooter({ contact, social, columns }: MobiFooterProps) {
         <div className="mt-20 border-t border-white/20 pt-12">
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
             <div>
-              <Sparkles className="h-24 w-24 text-orange-500" aria-hidden="true" />
+              <div className="grid h-28 w-28 place-items-center rounded-full border border-white/20">
+                <Sparkles className="h-20 w-20 text-orange-500" aria-hidden="true" />
+              </div>
               <p className="mt-8 text-sm text-white/60">© {new Date().getFullYear()} MOBI Digital. Produto da Agência MOBI, Pelotas/RS.</p>
             </div>
             <div>
               <p className="text-sm font-black text-white">• {contact.location}</p>
-              <p className="mt-8 text-[clamp(5rem,12vw,13rem)] font-black leading-[0.78] tracking-[-0.1em] text-white">
+              <p className="mt-8 text-[clamp(4.8rem,13vw,14rem)] font-black leading-[0.78] tracking-[-0.1em] text-white">
                 Digital
               </p>
             </div>
