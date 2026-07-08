@@ -2,27 +2,12 @@
 
 import Link from "next/link";
 import { X } from "lucide-react";
+import { MobiBrandLogo } from "@/components/mobi-brand-logo";
 import { MobiButton } from "@/components/button";
 import { MobiMenuOverlay } from "@/components/mobi-menu-overlay";
 import { activeTheme } from "@/lib/themes";
 import { navItems } from "@/lib/site-data";
 import { useState } from "react";
-
-function MobiLogo() {
-  return (
-    <Link href="/" className={activeTheme.header.logo} aria-label="MOBI Digital">
-      <span className="grid h-10 w-10 place-items-center rounded-sm bg-ink text-sm font-black text-white shadow-sm" aria-hidden="true">
-        <span className="leading-none">
-          <span className="text-cyan-400">M</span><span className="text-brand-300">O</span>
-        </span>
-      </span>
-      <span className="leading-tight">
-        <span className="block text-2xl font-black tracking-[-0.08em] text-ink">MOBI</span>
-        <span className="hidden text-[0.65rem] font-black uppercase tracking-[0.22em] text-muted sm:block">Digital</span>
-      </span>
-    </Link>
-  );
-}
 
 function DotMenuIcon() {
   return (
@@ -41,7 +26,9 @@ export function MobiHeader() {
   return (
     <header className={activeTheme.header.shell}>
       <div className={activeTheme.header.inner}>
-        <MobiLogo />
+        <Link href="/" className={activeTheme.header.logo} aria-label="MOBI Digital">
+          <MobiBrandLogo markClassName="h-11" />
+        </Link>
 
         <nav className={activeTheme.header.nav} aria-label="Navegação principal">
           {navItems.slice(0, 5).map((item) => (
