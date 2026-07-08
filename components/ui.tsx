@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { ReactNode } from "react";
 import type { LucideIcon } from "lucide-react";
 import { CheckCircle2 } from "lucide-react";
 import { MobiButton } from "@/components/button";
@@ -16,17 +17,19 @@ export function Footer() {
   return <MobiFooter {...mobiHomeContent.footer} />;
 }
 
-export function PageShell({ children }: { children: React.ReactNode }) {
+export function PageShell({ children }: { children: ReactNode }) {
   return (
     <>
       <Header />
-      <main className="bg-page text-ink">{children}</main>
+      <main id="conteudo-principal" className="bg-page text-ink" tabIndex={-1}>
+        {children}
+      </main>
       <Footer />
     </>
   );
 }
 
-export function Eyebrow({ children }: { children: React.ReactNode }) {
+export function Eyebrow({ children }: { children: ReactNode }) {
   return (
     <p className="inline-flex rounded-sm border border-line bg-surface px-4 py-2 text-xs font-black uppercase tracking-[0.22em] text-brand-700 shadow-sm">
       {children}
