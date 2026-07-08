@@ -1,5 +1,11 @@
 import type { Config } from "tailwindcss";
-import { mobiBorderRadius, mobiBoxShadow, mobiTailwindColors } from "./lib/design-tokens";
+import {
+  mobiAnimation,
+  mobiBorderRadius,
+  mobiBoxShadow,
+  mobiKeyframes,
+  mobiTailwindColors,
+} from "./lib/design-tokens";
 
 const config: Config = {
   content: [
@@ -12,6 +18,8 @@ const config: Config = {
       colors: mobiTailwindColors,
       boxShadow: mobiBoxShadow,
       borderRadius: mobiBorderRadius,
+      keyframes: mobiKeyframes,
+      animation: mobiAnimation,
     },
   },
   plugins: [],
