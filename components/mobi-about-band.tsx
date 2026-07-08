@@ -1,4 +1,5 @@
 import { Plus, Sparkles } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 type MobiAboutBandProps = {
   eyebrow: string;
@@ -11,6 +12,17 @@ type MobiAboutBandProps = {
   }[];
   collaborators: readonly string[];
 };
+
+const petalRotations = [
+  "rotate-0",
+  "rotate-45",
+  "rotate-90",
+  "rotate-[135deg]",
+  "rotate-180",
+  "rotate-[225deg]",
+  "rotate-[270deg]",
+  "rotate-[315deg]",
+];
 
 export function MobiAboutBand({ eyebrow, title, description, badges, stats, collaborators }: MobiAboutBandProps) {
   return (
@@ -44,11 +56,13 @@ export function MobiAboutBand({ eyebrow, title, description, badges, stats, coll
             <div className="absolute right-4 top-4 hidden h-48 w-48 rounded-full bg-orange-100 blur-2xl sm:block" aria-hidden="true" />
             <div className="absolute right-8 top-8 grid h-60 w-60 place-items-center rounded-full bg-orange-50 sm:h-80 sm:w-80">
               <div className="relative h-44 w-44 sm:h-56 sm:w-56" aria-hidden="true">
-                {Array.from({ length: 8 }).map((_, index) => (
+                {petalRotations.map((rotation) => (
                   <span
-                    key={index}
-                    className="absolute left-1/2 top-1/2 h-24 w-11 origin-[50%_100%] rounded-full bg-gradient-to-b from-orange-200 to-orange-500 opacity-90 shadow-soft sm:h-32 sm:w-16"
-                    style={{ transform: `translate(-50%, -100%) rotate(${index * 45}deg)` }}
+                    key={rotation}
+                    className={cn(
+                      "absolute left-1/2 top-1/2 h-24 w-11 origin-[50%_100%] -translate-x-1/2 -translate-y-full rounded-full bg-gradient-to-b from-orange-200 to-orange-500 opacity-90 shadow-soft sm:h-32 sm:w-16",
+                      rotation,
+                    )}
                   />
                 ))}
               </div>
