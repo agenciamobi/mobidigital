@@ -266,7 +266,7 @@ export const mobiHomeContent = {
   footer: {
     contact: {
       email: "contato@agenciamobi.com.br",
-      phone: "(53) 3302-7947",
+      phone: "(53) 98110-2176",
       location: "Pelotas/RS",
     },
     social: [
