@@ -14,19 +14,21 @@ export default function PlanosPage() {
         title="Escolha o ponto de partida para o site do cliente"
         description="A primeira versão opera com ativação manual pela equipe MOBI. Os planos abaixo organizam a oferta comercial antes da automação completa."
       />
-      <section className="bg-slate-50 py-16 sm:py-20">
+      <section className="bg-page py-16 sm:py-24">
         <div className="container-page">
           <div className="grid gap-6 lg:grid-cols-3">
-            {plans.map((plan) => (
-              <PlanCard key={plan.name} plan={plan} />
+            {plans.map((plan, index) => (
+              <div key={plan.name} className={index === 1 ? "lg:-translate-y-8" : index === 2 ? "lg:translate-y-8" : ""}>
+                <PlanCard plan={plan} />
+              </div>
             ))}
           </div>
-          <div className="mt-8 rounded-2xl border border-amber-200 bg-amber-50 p-5 text-sm leading-6 text-amber-900">
+          <div className="mt-14 rounded-lg border border-orange-200 bg-orange-50 p-6 text-sm leading-7 text-orange-900 shadow-sm">
             <strong>Observação:</strong> os valores podem variar conforme configuração, domínio, volume de conteúdo e necessidades específicas. A primeira versão pode operar com ativação manual pela equipe MOBI.
           </div>
         </div>
       </section>
-      <section className="bg-white py-16 sm:py-20">
+      <section className="bg-surface-muted py-16 sm:py-24">
         <div className="container-page">
           <SectionHeading
             eyebrow="Modelo comercial"
