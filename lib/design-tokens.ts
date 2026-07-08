@@ -103,13 +103,24 @@ export const mobiDesignTokens = {
     full: "9999px",
   },
   button: {
-    radius: "9999px",
+    radius: "0.375rem",
     padding: {
       sm: "0.625rem 1rem",
       md: "0.75rem 1.25rem",
       lg: "0.875rem 1.5rem",
     },
     fontWeight: "800",
+  },
+  motion: {
+    duration: {
+      fast: "160ms",
+      base: "240ms",
+      slow: "640ms",
+    },
+    easing: {
+      standard: "cubic-bezier(0.2, 0.8, 0.2, 1)",
+      soft: "cubic-bezier(0.16, 1, 0.3, 1)",
+    },
   },
 } as const;
 
@@ -138,4 +149,22 @@ export const mobiBorderRadius = mobiDesignTokens.radius;
 
 export const mobiBoxShadow = {
   soft: `0 24px 80px ${mobiDesignTokens.semantic.ink}1A`,
+  editorial: `0 18px 70px ${mobiDesignTokens.semantic.ink}14`,
+  polaroid: `0 28px 90px ${mobiDesignTokens.semantic.ink}18`,
+} as const;
+
+export const mobiKeyframes = {
+  "mobi-float": {
+    "0%, 100%": { transform: "translate3d(0, 0, 0) rotate(var(--mobi-card-rotation, 0deg))" },
+    "50%": { transform: "translate3d(0, -12px, 0) rotate(var(--mobi-card-rotation, 0deg))" },
+  },
+  "mobi-enter-up": {
+    "0%": { opacity: "0", transform: "translate3d(0, 28px, 0)" },
+    "100%": { opacity: "1", transform: "translate3d(0, 0, 0)" },
+  },
+} as const;
+
+export const mobiAnimation = {
+  "float-slow": "mobi-float 7s cubic-bezier(0.16, 1, 0.3, 1) infinite",
+  "enter-up": "mobi-enter-up 640ms cubic-bezier(0.16, 1, 0.3, 1) both",
 } as const;
