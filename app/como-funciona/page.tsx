@@ -1,3 +1,4 @@
+import { MobiPlatformMap } from "@/components/mobi-platform-map";
 import { CTASection, PageHero, PageShell } from "@/components/ui";
 import { processSteps } from "@/lib/site-data";
 
@@ -33,6 +34,13 @@ export default function ComoFuncionaPage() {
           </div>
         </div>
       </section>
+
+      <MobiPlatformMap
+        eyebrow="Arquitetura"
+        title="O fluxo comercial precisa conversar com a base técnica"
+        description="A página explica o caminho operacional: o cliente entende etapas simples enquanto a MOBI mantém controle técnico sobre hospedagem, WordPress, IA, domínio e white label."
+      />
+
       <section className="bg-surface-muted py-16 sm:py-24">
         <div className="container-page grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div>
