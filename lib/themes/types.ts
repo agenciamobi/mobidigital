@@ -45,6 +45,19 @@ export type ThemeRecord = {
     rotations: string[];
     accents: Record<HeroCollageAccent, string>;
   };
+  tenantScroller: {
+    shell: string;
+    viewport: string;
+    track: string;
+    card: string;
+    browser: string;
+    browserBar: string;
+    browserDot: string;
+    screen: string;
+    label: string;
+    meta: string;
+    accents: Record<HeroCollageAccent, string>;
+  };
   card: {
     base: string;
     compact: string;
