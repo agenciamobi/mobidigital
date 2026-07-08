@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { X } from "lucide-react";
+import { ArrowUpRight, X } from "lucide-react";
 import { activeTheme } from "@/lib/themes";
 import { navItems, whatsAppLink } from "@/lib/site-data";
 import { cn } from "@/lib/utils";
@@ -16,9 +16,15 @@ export function MobiMenuOverlay({ open, onClose }: MobiMenuOverlayProps) {
 
   return (
     <div className="absolute inset-x-0 top-full z-50">
+      <button
+        type="button"
+        className="fixed inset-0 z-40 cursor-default bg-ink/5 backdrop-blur-[1px]"
+        aria-label="Fechar menu"
+        onClick={onClose}
+      />
       <div className={activeTheme.menu.panel} role="dialog" aria-modal="true" aria-label="Menu de navegação MOBI Digital">
         <div className="mb-5 flex items-center justify-between gap-4">
-          <p className="text-xs font-black uppercase tracking-[0.22em] text-brand-700">Menu</p>
+          <p className="text-xs font-black uppercase tracking-[0.22em] text-brand-700">Menu MOBI Digital</p>
           <button
             type="button"
             onClick={onClose}
@@ -32,6 +38,7 @@ export function MobiMenuOverlay({ open, onClose }: MobiMenuOverlayProps) {
         <nav className="grid gap-1" aria-label="Menu principal">
           <Link href="/" onClick={onClose} className={activeTheme.menu.link}>
             <span>Home</span>
+            <span className="text-xl font-black text-muted">+</span>
           </Link>
           {navItems.map((item) => (
             <Link key={item.href} href={item.href} onClick={onClose} className={activeTheme.menu.link}>
@@ -42,11 +49,19 @@ export function MobiMenuOverlay({ open, onClose }: MobiMenuOverlayProps) {
         </nav>
 
         <div className="mt-8 border-t border-line pt-6">
-          <p className={cn(activeTheme.menu.mutedText, "font-semibold text-ink")}>MOBI Digital</p>
-          <p className={cn(activeTheme.menu.mutedText, "mt-2")}>Sites com IA, WordPress, domínio próprio, hospedagem e suporte humano.</p>
-          <a href={whatsAppLink} target="_blank" rel="noreferrer" className="mt-4 inline-flex text-sm font-black text-ink underline decoration-brand-300 decoration-2 underline-offset-4 hover:text-brand-700">
-            Falar com a MOBI
-          </a>
+          <p className={cn(activeTheme.menu.mutedText, "font-semibold text-ink")}>Sites com IA, WordPress, domínio próprio e suporte humano.</p>
+          <div className="mt-5 grid grid-cols-2 gap-3 text-sm">
+            <div className="rounded-md border border-line bg-surface-muted p-4">
+              <p className="text-xs font-black uppercase tracking-[0.18em] text-muted">Contato</p>
+              <a href={whatsAppLink} target="_blank" rel="noreferrer" className="mt-2 inline-flex items-center gap-2 font-black text-ink hover:text-brand-700">
+                WhatsApp <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+              </a>
+            </div>
+            <div className="rounded-md border border-line bg-surface-muted p-4">
+              <p className="text-xs font-black uppercase tracking-[0.18em] text-muted">Produto</p>
+              <p className="mt-2 font-black text-ink">MOBI 01</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
