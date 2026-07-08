@@ -43,7 +43,7 @@ export const publicRoutes = [
 ];
 
 export const whatsAppLink =
-  "https://wa.me/555333027947?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20a%20MOBI%20Digital";
+  "https://wa.me/5553981102176?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20a%20MOBI%20Digital";
 
 export const features = [
   {
