@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { MobiFloatingContact } from "@/components/mobi-floating-contact";
 import "./globals.css";
 
 const siteUrl = "https://mobidigital.com.br";
@@ -37,7 +38,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="pt-BR">
-      <body className="min-h-screen bg-page font-sans antialiased">{children}</body>
+      <body className="min-h-screen bg-page font-sans antialiased">
+        {children}
+        <MobiFloatingContact />
+      </body>
     </html>
   );
 }
