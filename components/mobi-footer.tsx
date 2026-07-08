@@ -80,7 +80,7 @@ export function MobiFooter({ contact, social, columns }: MobiFooterProps) {
           <div className="grid content-start gap-4 lg:pt-1">
             <p className="text-xs font-black uppercase tracking-[0.18em] text-white/40">Canais</p>
             {social.map((item) => (
-              <FooterLink key={item.label} href={item.href} large>
+              <FooterLink key={item.label} href={item.label === "WhatsApp" ? whatsAppLink : item.href} large>
                 {item.label}
               </FooterLink>
             ))}
