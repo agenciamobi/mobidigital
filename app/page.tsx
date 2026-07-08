@@ -1,5 +1,7 @@
 import { ArrowRight } from "lucide-react";
+import { MobiAboutBand } from "@/components/mobi-about-band";
 import { MobiButton } from "@/components/button";
+import { MobiFeaturedSites } from "@/components/mobi-featured-sites";
 import { MobiHeader } from "@/components/mobi-header";
 import { MobiTenantSiteScroller } from "@/components/mobi-tenant-site-scroller";
 import { Footer } from "@/components/ui";
@@ -21,7 +23,7 @@ function HomeSectionHeading({ eyebrow, title, description }: { eyebrow: string; 
 }
 
 export default function HomePage() {
-  const { hero, tenantSites, pillars } = mobiHomeContent;
+  const { hero, tenantSites, about, featuredSites, pillars } = mobiHomeContent;
 
   return (
     <>
@@ -44,7 +46,11 @@ export default function HomePage() {
           <MobiTenantSiteScroller sites={tenantSites} />
         </section>
 
-        <section className="border-b border-line bg-surface py-14">
+        <MobiAboutBand {...about} />
+
+        <MobiFeaturedSites {...featuredSites} />
+
+        <section className="border-b border-t border-line bg-surface py-14">
           <div className="container-page grid gap-4 md:grid-cols-3">
             {pillars.map((pillar) => (
               <article key={pillar.title} className={activeTheme.card.compact}>
