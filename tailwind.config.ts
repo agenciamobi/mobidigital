@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss";
-import { mobiBoxShadow, mobiTailwindColors } from "./lib/design-tokens";
+import { mobiBorderRadius, mobiBoxShadow, mobiTailwindColors } from "./lib/design-tokens";
 
 const config: Config = {
   content: [
@@ -11,9 +11,7 @@ const config: Config = {
     extend: {
       colors: mobiTailwindColors,
       boxShadow: mobiBoxShadow,
-      borderRadius: {
-        xxl: "1.75rem",
-      },
+      borderRadius: mobiBorderRadius,
     },
   },
   plugins: [],
