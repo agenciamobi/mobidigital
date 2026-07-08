@@ -73,6 +73,27 @@ export const mobiEditorialAgencyTheme: ThemeRecord = {
       orange: "bg-gradient-to-br from-orange-100 via-orange-300 to-cyan-200",
     },
   },
+  tenantScroller: {
+    shell: "relative mx-auto mt-12 overflow-hidden border-y border-line bg-page py-10 lg:-mb-16",
+    viewport:
+      "relative mx-auto w-full max-w-[1440px] overflow-hidden before:pointer-events-none before:absolute before:inset-y-0 before:left-0 before:z-10 before:w-24 before:bg-gradient-to-r before:from-page before:to-transparent after:pointer-events-none after:absolute after:inset-y-0 after:right-0 after:z-10 after:w-24 after:bg-gradient-to-l after:from-page after:to-transparent",
+    track:
+      "flex w-max items-center gap-6 motion-safe:animate-marquee-left motion-safe:hover:[animation-play-state:paused] motion-reduce:animate-none",
+    card:
+      "w-[300px] shrink-0 rounded-lg border-[10px] border-white bg-white p-2 shadow-polaroid sm:w-[380px] lg:w-[460px]",
+    browser: "overflow-hidden rounded-md border border-line bg-surface",
+    browserBar: "flex items-center gap-2 border-b border-line bg-surface-muted px-4 py-3",
+    browserDot: "h-2.5 w-2.5 rounded-full bg-line",
+    screen: "min-h-[220px] p-5 sm:min-h-[270px]",
+    label: "pt-4 text-center text-lg font-black tracking-[-0.05em] text-ink sm:text-xl",
+    meta: "text-xs font-black uppercase tracking-[0.18em] text-muted",
+    accents: {
+      brand: "bg-gradient-to-br from-brand-50 via-brand-100 to-magenta-100",
+      cyan: "bg-gradient-to-br from-cyan-50 via-cyan-100 to-brand-100",
+      magenta: "bg-gradient-to-br from-magenta-50 via-magenta-100 to-orange-100",
+      orange: "bg-gradient-to-br from-orange-50 via-orange-100 to-cyan-100",
+    },
+  },
   card: {
     base: "rounded-lg border border-line bg-surface p-6 shadow-sm",
     compact: "rounded-md border border-line bg-surface p-5 shadow-sm",
