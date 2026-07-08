@@ -30,25 +30,25 @@ export function MobiPeopleSection({ eyebrow, title, description, backgroundText,
         </div>
       </div>
 
-      <div className="relative mx-auto mt-10 min-h-[560px] max-w-7xl px-4">
-        <p className="pointer-events-none absolute inset-x-0 top-0 z-0 text-center text-[clamp(5rem,14vw,15rem)] font-black leading-[0.78] tracking-[-0.08em] text-ink/30">
+      <div className="relative mx-auto mt-10 max-w-7xl px-4 sm:min-h-[560px]">
+        <p className="pointer-events-none absolute inset-x-0 top-0 z-0 hidden text-center text-[clamp(5rem,14vw,15rem)] font-black leading-[0.78] tracking-[-0.08em] text-ink/30 sm:block">
           {backgroundText}
         </p>
 
-        <div className="relative z-10 mx-auto h-[560px] max-w-4xl">
+        <div className="relative z-10 mx-auto grid max-w-4xl gap-6 sm:h-[560px] sm:block">
           {members.map((member, index) => {
             const positions = [
-              "left-4 top-20 rotate-[-5deg]",
-              "right-6 top-28 rotate-[7deg]",
-              "left-1/2 top-64 -translate-x-1/2 rotate-[-2deg]",
-              "right-1/3 bottom-0 rotate-[4deg]",
+              "sm:absolute sm:left-4 sm:top-20 sm:rotate-[-5deg]",
+              "sm:absolute sm:right-6 sm:top-28 sm:rotate-[7deg]",
+              "sm:absolute sm:left-1/2 sm:top-64 sm:-translate-x-1/2 sm:rotate-[-2deg]",
+              "sm:absolute sm:bottom-0 sm:right-1/3 sm:rotate-[4deg]",
             ];
 
             return (
               <article
                 key={member.name}
                 className={cn(
-                  "absolute w-56 rounded-lg border-[10px] border-white bg-white p-2 shadow-polaroid sm:w-72",
+                  "mx-auto w-full max-w-sm rounded-lg border-[10px] border-white bg-white p-2 shadow-polaroid sm:w-72",
                   positions[index % positions.length],
                 )}
               >
