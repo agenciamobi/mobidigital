@@ -11,7 +11,7 @@ type MobiBrandLogoProps = {
 export function MobiBrandLogo({
   className,
   markClassName,
-  showDescriptor = true,
+  showDescriptor = false,
   descriptor = "Digital",
   invert = false,
 }: MobiBrandLogoProps) {
