@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowUpRight, Sparkles } from "lucide-react";
+import { MobiBrandLogo } from "@/components/mobi-brand-logo";
 
 type MobiFooterProps = {
   contact: {
@@ -43,16 +44,6 @@ function FooterLink({ href, children, large = false }: { href: string; children:
   );
 }
 
-function MobiFooterMark() {
-  return (
-    <span className="grid h-12 w-12 place-items-center rounded-sm bg-white text-sm font-black tracking-[-0.08em] shadow-sm" aria-hidden="true">
-      <span>
-        <span className="text-cyan-500">M</span><span className="text-brand-500">O</span>
-      </span>
-    </span>
-  );
-}
-
 export function MobiFooter({ contact, social, columns }: MobiFooterProps) {
   return (
     <footer className="overflow-hidden bg-black py-20 text-white sm:py-28" aria-label="Rodapé MOBI Digital">
@@ -60,11 +51,7 @@ export function MobiFooter({ contact, social, columns }: MobiFooterProps) {
         <div className="grid gap-14 lg:grid-cols-[0.95fr_0.85fr_1.2fr] lg:items-start">
           <div>
             <Link href="/" className="focus-ring inline-flex items-center gap-3 rounded-sm" aria-label="MOBI Digital">
-              <MobiFooterMark />
-              <span className="leading-none">
-                <span className="block text-2xl font-black tracking-[-0.06em] text-white">MOBI</span>
-                <span className="block text-xs font-black uppercase tracking-[0.22em] text-white/45">Digital</span>
-              </span>
+              <MobiBrandLogo markClassName="h-12" invert />
             </Link>
 
             <p className="mt-10 max-w-sm text-base font-semibold leading-7 text-white/60">
