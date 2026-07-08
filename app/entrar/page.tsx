@@ -1,4 +1,4 @@
-import { ArrowRight, LockKeyhole } from "lucide-react";
+import { ArrowRight, Clock3, KeyRound, LockKeyhole, ShieldCheck } from "lucide-react";
 import { MobiButton } from "@/components/button";
 import { PageHero, PageShell } from "@/components/ui";
 import { whatsAppLink } from "@/lib/site-data";
@@ -18,7 +18,7 @@ export default function EntrarPage() {
       />
 
       <section className="bg-page py-16 sm:py-24">
-        <div className="container-page grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-stretch">
+        <div className="container-page grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-stretch">
           <article className="rounded-lg border border-line bg-surface p-8 shadow-editorial">
             <div className="flex h-14 w-14 items-center justify-center rounded-md bg-brand-50 text-brand-700">
               <LockKeyhole className="h-7 w-7" aria-hidden="true" />
@@ -37,17 +37,56 @@ export default function EntrarPage() {
             </div>
           </article>
 
-          <article className="rounded-lg border border-line bg-surface-muted p-8">
-            <p className="text-xs font-black uppercase tracking-[0.22em] text-brand-700">Futuro painel</p>
-            <div className="mt-8 grid gap-4">
-              {["Status do site", "Briefing", "Domínio", "Suporte", "Prompt de IA"].map((item, index) => (
-                <div key={item} className="flex items-center justify-between border-b border-line pb-4">
-                  <span className="text-lg font-black tracking-[-0.05em] text-ink">{item}</span>
-                  <span className="text-2xl font-black text-line">0{index + 1}</span>
-                </div>
-              ))}
+          <article className="rounded-lg border border-line bg-ink p-8 text-white shadow-editorial">
+            <p className="text-xs font-black uppercase tracking-[0.22em] text-orange-300">Prévia visual</p>
+            <h2 className="mt-4 text-3xl font-black tracking-[-0.06em]">Acesso futuro ao painel</h2>
+            <div className="mt-7 grid gap-4">
+              <label className="grid gap-2 text-sm font-black uppercase tracking-[0.14em] text-white/45">
+                E-mail
+                <input className="focus-ring rounded-md border border-white/15 bg-white/[0.04] px-4 py-3 text-sm normal-case tracking-normal text-white placeholder:text-white/35" placeholder="cliente@empresa.com.br" aria-label="E-mail" disabled />
+              </label>
+              <label className="grid gap-2 text-sm font-black uppercase tracking-[0.14em] text-white/45">
+                Senha
+                <input className="focus-ring rounded-md border border-white/15 bg-white/[0.04] px-4 py-3 text-sm normal-case tracking-normal text-white placeholder:text-white/35" placeholder="••••••••" aria-label="Senha" disabled />
+              </label>
+              <button type="button" className="focus-ring inline-flex items-center justify-center gap-2 rounded-sm bg-white px-6 py-3 text-sm font-black uppercase tracking-tight text-black opacity-70" disabled>
+                Entrar em breve <KeyRound className="h-4 w-4" aria-hidden="true" />
+              </button>
             </div>
           </article>
+        </div>
+      </section>
+
+      <section className="bg-surface-muted py-16 sm:py-24">
+        <div className="container-page grid gap-5 md:grid-cols-3">
+          {[
+            {
+              title: "Autenticação",
+              description: "Login seguro e dados separados por cliente.",
+              icon: ShieldCheck,
+            },
+            {
+              title: "Status do site",
+              description: "Acompanhamento do briefing, domínio e publicação.",
+              icon: Clock3,
+            },
+            {
+              title: "Acesso ao suporte",
+              description: "Histórico de orientação e próximos passos do projeto.",
+              icon: LockKeyhole,
+            },
+          ].map((item) => {
+            const Icon = item.icon;
+            return (
+              <article key={item.title} className="rounded-lg border border-line bg-surface p-6 shadow-sm">
+                <div className="flex h-12 w-12 items-center justify-center rounded-md bg-brand-50 text-brand-700">
+                  <Icon className="h-6 w-6" aria-hidden="true" />
+                </div>
+                <h2 className="mt-5 text-2xl font-black tracking-[-0.06em] text-ink">{item.title}</h2>
+                <p className="mt-3 text-sm leading-7 text-muted">{item.description}</p>
+              </article>
+            );
+          })}
         </div>
       </section>
     </PageShell>
