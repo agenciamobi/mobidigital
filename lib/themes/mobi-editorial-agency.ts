@@ -12,17 +12,17 @@ export const mobiEditorialAgencyTheme: ThemeRecord = {
   },
   header: {
     shell: "sticky top-0 z-50 border-b border-line bg-page/95 backdrop-blur-xl",
-    inner: "container-page flex min-h-[88px] items-center justify-between gap-5 py-4",
+    inner: "container-page flex min-h-[76px] items-center justify-between gap-5 py-3",
     logo: "focus-ring inline-flex items-center gap-3 rounded-md",
     nav: "hidden items-center gap-1 xl:flex",
     navLink:
-      "focus-ring rounded-md px-3 py-2 text-sm font-black uppercase tracking-tight text-ink transition hover:bg-surface-muted",
+      "focus-ring rounded-md px-3 py-2 text-xs font-black uppercase tracking-[0.12em] text-ink transition hover:bg-surface-muted",
     menuButton:
       "focus-ring inline-flex h-11 w-11 items-center justify-center rounded-md border border-line bg-page text-ink transition hover:bg-surface",
   },
   menu: {
     panel:
-      "fixed right-4 top-[88px] z-50 w-[min(440px,calc(100vw-32px))] rounded-xl border border-line bg-surface p-6 shadow-editorial sm:right-8 lg:right-[max(2rem,calc((100vw-1120px)/2))]",
+      "fixed right-4 top-[76px] z-50 w-[min(460px,calc(100vw-32px))] rounded-xl border border-line bg-surface p-6 shadow-editorial sm:right-8 lg:right-[max(2rem,calc((100vw-1120px)/2))]",
     link: "flex items-center justify-between rounded-md px-1 py-2 text-2xl font-black tracking-tight text-ink transition hover:text-brand-600 sm:text-3xl",
     mutedText: "text-sm leading-6 text-muted",
   },
@@ -44,7 +44,7 @@ export const mobiEditorialAgencyTheme: ThemeRecord = {
     },
   },
   hero: {
-    shell: "relative overflow-hidden border-b border-line bg-page py-16 sm:py-24 lg:py-28",
+    shell: "relative overflow-hidden border-b border-line bg-page pt-14 sm:pt-20 lg:pt-24",
     eyebrow:
       "inline-flex rounded-sm border border-line bg-surface px-4 py-2 text-xs font-black uppercase tracking-[0.22em] text-brand-700 shadow-sm",
     title:
@@ -74,11 +74,11 @@ export const mobiEditorialAgencyTheme: ThemeRecord = {
     },
   },
   tenantScroller: {
-    shell: "relative mx-auto mt-12 overflow-hidden border-y border-line bg-page pt-10 pb-20 lg:-mb-8 lg:pb-24",
+    shell: "relative mx-auto mt-12 overflow-hidden bg-page pt-12 pb-20 lg:-mb-8 lg:pb-24",
     viewport:
-      "relative mx-auto w-full max-w-[1440px] overflow-hidden pb-8 before:pointer-events-none before:absolute before:inset-y-0 before:left-0 before:z-10 before:w-24 before:bg-gradient-to-r before:from-page before:to-transparent after:pointer-events-none after:absolute after:inset-y-0 after:right-0 after:z-10 after:w-24 after:bg-gradient-to-l after:from-page after:to-transparent",
+      "relative mx-auto w-full max-w-[1440px] overflow-hidden pb-10 before:pointer-events-none before:absolute before:inset-y-0 before:left-0 before:z-10 before:w-24 before:bg-gradient-to-r before:from-page before:to-transparent after:pointer-events-none after:absolute after:inset-y-0 after:right-0 after:z-10 after:w-24 after:bg-gradient-to-l after:from-page after:to-transparent",
     track:
-      "flex w-max items-center gap-6 pb-8 motion-safe:animate-marquee-left motion-safe:hover:[animation-play-state:paused] motion-reduce:animate-none",
+      "flex w-max items-end gap-6 pb-10 motion-safe:animate-marquee-left motion-safe:hover:[animation-play-state:paused] motion-reduce:animate-none",
     card:
       "w-[300px] shrink-0 rounded-lg border-[10px] border-white bg-white p-2 pb-7 shadow-polaroid sm:w-[380px] lg:w-[460px]",
     browser: "overflow-hidden rounded-md border border-line bg-surface",
