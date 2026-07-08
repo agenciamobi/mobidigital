@@ -3,7 +3,7 @@ import { whatsAppLink } from "@/lib/site-data";
 
 export function MobiFloatingContact() {
   return (
-    <aside className="pointer-events-none fixed inset-x-0 bottom-4 z-40 px-3 sm:bottom-6" aria-label="Atalho de contato MOBI">
+    <aside className="pointer-events-none fixed inset-x-0 bottom-[calc(1rem+env(safe-area-inset-bottom))] z-40 px-3 print:hidden sm:bottom-[calc(1.5rem+env(safe-area-inset-bottom))]" aria-label="Atalho de contato MOBI">
       <div className="container-page flex justify-end">
         <a
           href={whatsAppLink}
