@@ -101,6 +101,95 @@ export const mobiHomeContent = {
         accent: "orange" as HeroCollageAccent,
         tags: ["Mobile", "Reservas"],
       },
+      {
+        name: "Advocacia Prado",
+        type: "Conteúdo + autoridade",
+        summary: "Páginas por serviço, FAQ, contato e base preparada para ranqueamento local.",
+        accent: "magenta" as HeroCollageAccent,
+        tags: ["SEO", "FAQ", "Contato"],
+      },
+      {
+        name: "Studio Forma",
+        type: "Portfólio comercial",
+        summary: "Apresentação visual, serviços e CTA para transformar interesse em orçamento.",
+        accent: "cyan" as HeroCollageAccent,
+        tags: ["Portfólio", "Orçamento"],
+        wide: true,
+      },
+    ],
+  },
+  serviceRows: {
+    eyebrow: "Nosso método",
+    title: "Onde IA, hospedagem e estratégia viram site publicado",
+    items: [
+      {
+        title: "Briefing guiado",
+        description:
+          "Organizamos informações da empresa, objetivos, serviços, diferenciais, domínio e palavras-chave antes da criação.",
+      },
+      {
+        title: "Estrutura WordPress",
+        description:
+          "A base do site é planejada para páginas comerciais, conteúdo, blog, SEO local e evolução com IA.",
+      },
+      {
+        title: "Domínio e hospedagem",
+        description:
+          "O cliente pode começar em subdomínio temporário e depois conectar o domínio próprio com orientação clara.",
+      },
+      {
+        title: "Prompt para Code With AI",
+        description:
+          "Transformamos o briefing em instrução prática para evoluir textos, seções e páginas com assistência de IA.",
+      },
+    ],
+  },
+  darkImpact: {
+    eyebrow: "Fluxo completo",
+    title: "Cada etapa pensada para tirar o site do improviso",
+    description:
+      "A MOBI Digital combina produto, infraestrutura e suporte para transformar ideia, briefing e domínio em uma presença digital publicável.",
+    cta: "Conhecer o método",
+    href: "/como-funciona",
+    rating: "4.9",
+    ratingLabel: "clientes orientados",
+    metric: "25+",
+    metricLabel: "anos de web somados",
+    people: ["P", "IA", "M"],
+    showcaseTitle: "Sua visão, nossa estrutura: uma parceria para publicar com clareza.",
+    cards: [
+      {
+        title: "Estratégia + execução",
+        description: "A plataforma reduz decisões soltas e guia o cliente até uma base pronta para evoluir.",
+        accent: "brand" as HeroCollageAccent,
+      },
+      {
+        title: "Site com direção",
+        description: "Cada página nasce conectada a CTA, SEO local, serviços e contexto comercial.",
+        accent: "orange" as HeroCollageAccent,
+      },
+    ],
+  },
+  successGrid: {
+    eyebrow: "Evolução do produto",
+    title: "Transformando ideias em sites mensuráveis",
+    description:
+      "Da venda inicial ao painel do cliente, a MOBI Digital nasce preparada para crescer com domínio próprio, white label e provisionamento técnico.",
+    cta: "Ver próximos passos",
+    href: "/como-funciona",
+    cards: [
+      {
+        title: "Experiência multi-segmento",
+        description: "A mesma base pode atender floriculturas, clínicas, restaurantes, profissionais liberais e agências parceiras.",
+      },
+      {
+        title: "Fluxo de ponta a ponta",
+        description: "Plano, cadastro, briefing, site, domínio, prompt de IA e suporte ficam conectados no mesmo produto.",
+      },
+      {
+        title: "Operação white label",
+        description: "Parceiros poderão usar marca, cores, suporte e domínio próprio no painel, sem recriar a infraestrutura.",
+      },
     ],
   },
   pillars: [
