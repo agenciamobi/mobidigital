@@ -4,22 +4,64 @@ import type { HeroCollageAccent } from "@/lib/themes";
 import { activeTheme } from "@/lib/themes";
 import { cn } from "@/lib/utils";
 
-type MobiPlatformMapProps = {
-  eyebrow: string;
+type PlatformNode = {
   title: string;
   description: string;
-  cta: string;
-  href: string;
-  nodes: readonly {
-    title: string;
-    description: string;
-    accent: HeroCollageAccent;
-  }[];
+  accent: HeroCollageAccent;
 };
+
+type MobiPlatformMapProps = {
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+  cta?: string;
+  href?: string;
+  nodes?: readonly PlatformNode[];
+};
+
+const defaultNodes: readonly PlatformNode[] = [
+  {
+    title: "Cadastro e briefing",
+    description: "O cliente informa negócio, contatos, serviços, domínio, cores e objetivos antes da criação.",
+    accent: "cyan",
+  },
+  {
+    title: "Hospedagem e base técnica",
+    description: "A estrutura considera WHM/cPanel, isolamento por conta e operação controlada pela MOBI.",
+    accent: "brand",
+  },
+  {
+    title: "WordPress preparado",
+    description: "O site nasce com base flexível para páginas comerciais, blog, SEO local e evolução contínua.",
+    accent: "magenta",
+  },
+  {
+    title: "Code With AI orientado",
+    description: "O briefing vira instrução prática para acelerar textos, seções e melhorias assistidas por IA.",
+    accent: "orange",
+  },
+  {
+    title: "Domínio próprio",
+    description: "O cliente pode começar temporário e conectar o domínio definitivo quando estiver pronto.",
+    accent: "cyan",
+  },
+  {
+    title: "White label futuro",
+    description: "A arquitetura já prepara parceiros com marca, clientes e operação comercial própria.",
+    accent: "brand",
+  },
+];
 
 const icons = [LayoutDashboard, ServerCog, PanelTop, Bot, Globe2, ShieldCheck];
 
-export function MobiPlatformMap({ eyebrow, title, description, cta, href, nodes }: MobiPlatformMapProps) {
+export function MobiPlatformMap({
+  eyebrow = "Mapa da plataforma",
+  title = "O site não é só uma página: é uma operação conectada",
+  description = "O MOBI 01 agora mostra melhor a camada técnica por trás da venda: cadastro, hospedagem, WordPress, IA, domínio e white label trabalham como um fluxo único.",
+  cta = "Entender o fluxo",
+  href = "/como-funciona",
+  nodes = defaultNodes,
+}: MobiPlatformMapProps) {
   return (
     <section className="bg-page py-20 sm:py-32" aria-labelledby="mobi-platform-map-title">
       <div className="container-page">
