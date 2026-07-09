@@ -1,4 +1,5 @@
 import { ArrowRight, CheckCircle2, MessageCircle } from "lucide-react";
+import { MobiAudienceFit } from "@/components/mobi-audience-fit";
 import { MobiButton } from "@/components/button";
 import { CTASection, PageHero, PageShell, PlanCard, SectionHeading } from "@/components/ui";
 import { plans, whatsAppLink } from "@/lib/site-data";
@@ -122,6 +123,8 @@ export default function PlanosPage() {
           </div>
         </div>
       </section>
+
+      <MobiAudienceFit />
 
       <section className="bg-surface-muted py-16 sm:py-24">
         <div className="container-page">
