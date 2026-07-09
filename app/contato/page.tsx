@@ -1,5 +1,6 @@
-import { ArrowRight, Mail, MapPin, MessageCircle, Send } from "lucide-react";
+import { ArrowRight, Mail, MapPin, MessageCircle } from "lucide-react";
 import { MobiButton } from "@/components/button";
+import { MobiContactForm } from "@/components/mobi-contact-form";
 import { PageHero, PageShell } from "@/components/ui";
 import { whatsAppLink } from "@/lib/site-data";
 
@@ -73,26 +74,9 @@ export default function ContatoPage() {
             <p className="text-xs font-black uppercase tracking-[0.22em] text-brand-700">Pré-briefing</p>
             <h2 className="mt-4 text-3xl font-black tracking-[-0.06em] text-ink">Organize a conversa antes do atendimento</h2>
             <p className="mt-3 text-sm leading-6 text-muted">
-              Este formulário ainda é visual, mas já define quais dados o atendimento precisa coletar para acelerar a proposta.
+              Preencha os dados e o botão já abre o WhatsApp da MOBI com uma mensagem organizada para acelerar o atendimento.
             </p>
-            <div className="mt-7 grid gap-4">
-              <div className="grid gap-4 sm:grid-cols-2">
-                <input className="focus-ring rounded-md border border-line bg-surface-muted px-4 py-3 text-sm text-ink placeholder:text-muted" placeholder="Nome" aria-label="Nome" />
-                <input className="focus-ring rounded-md border border-line bg-surface-muted px-4 py-3 text-sm text-ink placeholder:text-muted" placeholder="WhatsApp" aria-label="WhatsApp" />
-              </div>
-              <input className="focus-ring rounded-md border border-line bg-surface-muted px-4 py-3 text-sm text-ink placeholder:text-muted" placeholder="E-mail" aria-label="E-mail" />
-              <select className="focus-ring rounded-md border border-line bg-surface-muted px-4 py-3 text-sm text-muted" aria-label="Tipo de site">
-                <option>Tipo de site</option>
-                <option>Site institucional</option>
-                <option>Catálogo com WhatsApp</option>
-                <option>Landing page</option>
-                <option>White label / parceiro</option>
-              </select>
-              <textarea className="focus-ring min-h-36 rounded-md border border-line bg-surface-muted px-4 py-3 text-sm text-ink placeholder:text-muted" placeholder="Conte rapidamente o que você quer criar" aria-label="Mensagem" />
-              <button type="button" className="focus-ring inline-flex items-center justify-center gap-2 rounded-sm bg-line px-6 py-3 text-sm font-black uppercase tracking-tight text-muted" disabled>
-                Envio será ativado depois <Send className="h-4 w-4" aria-hidden="true" />
-              </button>
-            </div>
+            <MobiContactForm />
           </article>
         </div>
       </section>
