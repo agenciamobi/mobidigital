@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { MobiAboutBand } from "@/components/mobi-about-band";
+import { MobiAudienceFit } from "@/components/mobi-audience-fit";
 import { MobiButton } from "@/components/button";
 import { MobiDarkImpact } from "@/components/mobi-dark-impact";
 import { MobiFeaturedSites } from "@/components/mobi-featured-sites";
@@ -74,6 +75,7 @@ export default function HomePage() {
         <MobiInsightsGrid {...insights} />
         <MobiTestimonialShowcase {...testimonial} />
         <MobiPeopleSection {...people} />
+        <MobiAudienceFit />
 
         <section className="bg-page py-20 sm:py-28">
           <div className="container-page border-t border-line pt-16">
