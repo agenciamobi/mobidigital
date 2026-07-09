@@ -23,6 +23,45 @@ const planGuides = [
   },
 ];
 
+const comparisonRows = [
+  {
+    feature: "Melhor uso",
+    start: "Presença inicial",
+    pro: "Site institucional completo",
+    catalog: "Produtos e serviços",
+  },
+  {
+    feature: "Páginas planejadas",
+    start: "Essenciais",
+    pro: "Até 5 páginas iniciais",
+    catalog: "Categorias e itens",
+  },
+  {
+    feature: "SEO local",
+    start: "Base inicial",
+    pro: "Estrutura ampliada",
+    catalog: "Categorias otimizadas",
+  },
+  {
+    feature: "WhatsApp",
+    start: "CTA principal",
+    pro: "CTA por página",
+    catalog: "CTA por produto/serviço",
+  },
+  {
+    feature: "Blog",
+    start: "Opcional futuro",
+    pro: "Preparado",
+    catalog: "Opcional futuro",
+  },
+  {
+    feature: "Indicado para",
+    start: "Autônomos e validação rápida",
+    pro: "Empresas locais e serviços",
+    catalog: "Lojas, cardápios e catálogos",
+  },
+];
+
 export default function PlanosPage() {
   return (
     <PageShell>
@@ -46,6 +85,39 @@ export default function PlanosPage() {
             </p>
             <MobiButton href={whatsAppLink} external variant="primary" size="md">
               Tirar dúvida <MessageCircle className="h-4 w-4" aria-hidden="true" />
+            </MobiButton>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-page py-16 sm:py-24">
+        <div className="container-page">
+          <SectionHeading
+            eyebrow="Comparativo"
+            title="Compare rapidamente antes de escolher"
+            description="A tabela reduz a dúvida entre começar simples, montar um site institucional mais completo ou organizar produtos e serviços em formato de catálogo."
+          />
+          <div className="mt-12 overflow-hidden rounded-lg border border-line bg-surface shadow-sm">
+            <div className="grid grid-cols-1 border-b border-line bg-ink text-white md:grid-cols-[1fr_repeat(3,0.85fr)]">
+              <div className="p-5 text-xs font-black uppercase tracking-[0.18em] text-white/50">Critério</div>
+              <div className="border-t border-white/10 p-5 text-lg font-black tracking-[-0.05em] md:border-l md:border-t-0">Start</div>
+              <div className="border-t border-white/10 p-5 text-lg font-black tracking-[-0.05em] md:border-l md:border-t-0">Pro</div>
+              <div className="border-t border-white/10 p-5 text-lg font-black tracking-[-0.05em] md:border-l md:border-t-0">Catálogo</div>
+            </div>
+            <div className="divide-y divide-line">
+              {comparisonRows.map((row) => (
+                <div key={row.feature} className="grid grid-cols-1 md:grid-cols-[1fr_repeat(3,0.85fr)]">
+                  <div className="bg-surface-muted p-5 text-sm font-black tracking-[-0.03em] text-ink">{row.feature}</div>
+                  <div className="border-t border-line p-5 text-sm leading-6 text-muted md:border-l md:border-t-0">{row.start}</div>
+                  <div className="border-t border-line p-5 text-sm leading-6 text-muted md:border-l md:border-t-0">{row.pro}</div>
+                  <div className="border-t border-line p-5 text-sm leading-6 text-muted md:border-l md:border-t-0">{row.catalog}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="mt-8 flex justify-center">
+            <MobiButton href="/cadastro" variant="primary" size="lg">
+              Fazer pré-cadastro <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </MobiButton>
           </div>
         </div>
