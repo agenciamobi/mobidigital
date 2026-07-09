@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { ArrowRight, Building2, CheckCircle2, MessageCircle, Palette, PanelsTopLeft } from "lucide-react";
 import { MobiButton } from "@/components/button";
 import { MobiSignupForm } from "@/components/mobi-signup-form";
@@ -78,7 +79,9 @@ export default function CadastroPage() {
               O envio abre o WhatsApp oficial da MOBI com plano, empresa, domínio, urgência e observações formatadas para atendimento comercial.
             </p>
             <div className="mt-8">
-              <MobiSignupForm />
+              <Suspense fallback={<div className="rounded-md border border-line bg-surface-muted p-5 text-sm font-semibold text-muted">Carregando formulário...</div>}>
+                <MobiSignupForm />
+              </Suspense>
             </div>
           </article>
         </div>
